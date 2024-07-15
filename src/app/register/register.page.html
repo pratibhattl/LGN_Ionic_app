@@ -1,0 +1,51 @@
+<ion-content>
+  <div class="login_block">
+    <div class="login_wrap">
+      <div class="title_container">
+        <ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img>
+      </div>
+      <form [formGroup]="registerForm"  (ngSubmit)="submitRegister()">
+        <div class="form_container">
+          <ion-label>Name</ion-label>
+          <ion-item>
+            <ion-input type="text" placeholder="Enter your name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" ></ion-input>        
+          </ion-item>
+          <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">  
+            <span class="danger" *ngIf="f['name'].errors['required']">Please enter your name.</span>  
+            <span class="danger" *ngIf="f['name'].errors['cannotContainSpace']">Please enter valid name.</span>  
+          </div>
+  
+          <ion-label>Email</ion-label>
+          <ion-item>
+            <ion-input type="email" placeholder="Enter your email address" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">  
+            <span class="danger" *ngIf="f['email'].errors['required']">Please enter your email id.</span>  
+            <span class="danger" *ngIf="f['email'].errors['pattern']">Please enter valid email id.</span>  
+          </div>
+
+          <ion-label>Mobile</ion-label>
+          <ion-item>
+            <ion-input type="tel" placeholder="Enter your mobile number" formControlName="mobile"  [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }"></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">  
+            <span class="danger" *ngIf="f['mobile'].errors['required']">Please enter your mobile number.</span>  
+            <span class="danger" *ngIf="f['mobile'].errors['pattern']">Please enter valid mobile number.</span>  
+          </div>
+
+          <ion-label>Password</ion-label>
+          <ion-item>
+            <ion-input type="password" placeholder="Enter your password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">  
+            <span class="danger" *ngIf="f['password'].errors['required']">Please enter password.</span>  
+            <span class="danger" *ngIf="f['password'].errors['pattern']">Password must have at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long.</span>  
+          </div>
+
+          <ion-button class="btn__link" expand="block"  routerDirection="forward" type="submit">Register Now</ion-button>
+          <p class="text link_text text-center">Already here ? <span routerLink="/login" routerDirection="forward">Login</span></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

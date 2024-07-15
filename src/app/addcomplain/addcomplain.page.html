@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="violet">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title><ion-img src="../../assets/white-logo.png" class="logo_item"></ion-img> <span>Add Complain</span></ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form_container">
+    <ion-item>
+      <ion-label position="stacked">Station / Rack: </ion-label>
+      <ion-input type="text" placeholder="Enter Station Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Gear of fault: </ion-label>
+      <ion-input type="text" placeholder="Enter Name of fault gear"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Faliure Description: </ion-label>
+      <ion-textarea placeholder="Enter Faliure Description"></ion-textarea>
+    </ion-item>
+
+    <label class="upload_image">
+      <div class="upload_icon">
+        <img src="../../assets/gallery.png"> Upload Image
+      </div>
+      <p>Drag & Drop you image files or click to upload</p>
+      <input type="file">
+    </label>
+    <label class="upload_video">
+      <div class="upload_icon">
+        <img src="../../assets/gallery.png">
+      </div>
+      <h4>Upload Video</h4>
+      <p>Drag & Drop you video files or click to upload</p>
+      <input type="file">
+    </label>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="violet" routerLink="/home" routerDirection="forward">Submit Complain</ion-button>
+  </ion-toolbar>
+</ion-footer>

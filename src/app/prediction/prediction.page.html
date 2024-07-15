@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="charcoal">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="power-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="leader_board" style="margin: 10px;">
+    <span *ngIf="predictFlag" class="center" style="margin: 23%;">No Data Found</span>
+    
+    <ng-container *ngFor="let predict of prediction">
+      <h6>Title : {{ predict.title }}</h6>
+      <table class="table">
+        <thead>
+          <tr>
+            <th align="center">#</th>
+            <th>Question</th>
+            <th>Your Answer</th>
+            <th align="center">Duration from Question</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let predictionItem of predict.predictions; let j=index">
+            <td align="center">{{ j + 1 }}</td>
+            <td>{{ predictionItem.question.question }}</td>
+            <td>{{ predictionItem.answer }}</td>
+            <td align="center">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+    
+  </div>
+</ion-content>

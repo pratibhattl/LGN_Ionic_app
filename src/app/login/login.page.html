@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="login_block">
+    <div class="login_wrap">
+      <div class="title_container">
+        <ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+        <div class="form_container">
+          <ion-label>Email</ion-label>
+          <ion-item>
+            <ion-img src="../../assets/img-2.svg" slot="start"></ion-img>
+            <ion-input formControlName="userName" type="email" placeholder="Enter your email address" [ngClass]="{ 'is-invalid': submitted && f['userName'].errors }" ></ion-input>        
+          </ion-item>
+          <div *ngIf="submitted && f['userName'].errors" class="invalid-feedback">  
+            <span class="danger" *ngIf="f['userName'].errors['required']">Please enter your email-id.</span>  
+            <span class="danger" *ngIf="f['userName'].errors['pattern']">Please enter valid email id.</span>  
+          </div>
+          <ion-label>Password</ion-label>
+          <ion-item>
+            <ion-img src="../../assets/img-3.svg" slot="start"></ion-img>
+            <ion-input formControlName="password" type="password" placeholder="Enter your password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"></ion-input>
+         </ion-item>
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">  
+            <span class="danger" *ngIf="f['password'].errors['required']">Please enter your password.</span> 
+            <span class="danger" *ngIf="f['password'].errors['minlength']">Minimum password length is 6.</span>  
+          </div> 
+          <p class="text link_text ion-text-end">Forgot password?</p>
+          <ion-button class="btn__link" expand="block" type="submit">Login Now</ion-button>
+          <p class="text link_text text-center">New here ? <span routerLink="/register" routerDirection="forward">Register</span></p>
+        </div>
+        </form>
+      </div>
+    
+  </div>
+</ion-content>

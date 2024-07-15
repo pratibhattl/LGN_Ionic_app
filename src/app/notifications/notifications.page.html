@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="charcoal">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="power-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 *ngIf="nodata" class="center">No Data Found</h1>
+  <ion-list *ngFor="let notifi of notification;">
+    <ion-item >
+      <ion-avatar slot="start">
+        <img src="../../assets/lgn_logo.png">
+      </ion-avatar>
+    
+      <!-- <ion-label>
+        <h5>{{notifi.title}}</h5>
+       <p>{{notifi.description}}</p>
+      </ion-label> -->
+          <ion-label>
+            
+        <h5 >{{notifi.user.name}}</h5>
+        <p *ngIf="notifi.notifiTwel"
+        >Unfollow streamer</p>
+        <p *ngIf="notifi.notifiEle"
+        >Follow streamer</p>
+       <p *ngIf="notifi.notifiNine"
+       >new streaming request has been submitted by a user. Please review and process the request promptly.</p>
+    
+      <p *ngIf="notifi.notifiEight"
+      >delete tournament</p>
+      <p *ngIf="notifi.notifiSeven"
+      >user's profile is inactive</p>
+      <p *ngIf="notifi.notifiSix"
+      >user's profile is inactive</p>
+      <p *ngIf="notifi.notifiFive"
+      >user's profile is inactive</p>
+      <p *ngIf="notifi.notifiFour"
+      >user's profile is inactive</p>
+      <p *ngIf="notifi.notifiThree"
+      >user's profile is inactive</p>
+      <p *ngIf="notifi.notifiTwo"
+      >user's profile is inactive</p>
+      <p *ngIf="notifi.notifiOne"
+      >user's profile is inactive</p>
+     </ion-label>
+    </ion-item>
+    <ion-list  *ngIf="nodata" style="color:red">
+      <ion-item>
+        <h1>No Data Found</h1>
+      </ion-item>
+    </ion-list>
+
+
+  </ion-list>
+</ion-content>

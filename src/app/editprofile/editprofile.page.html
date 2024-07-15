@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="charcoal">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <ion-buttons slot="end">
+      <ion-button >
+        <ion-icon name="power-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="userEditForm" (ngSubmit)="updateProfile()">
+    <ion-label>Name</ion-label>
+    <ion-item>
+      <ion-input type="text" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" ></ion-input>        
+    </ion-item>
+    <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">  
+      <span class="danger" *ngIf="f['name'].errors['required']">Please enter your name.</span> 
+    </div>
+
+    <ion-label>Mobile</ion-label>
+    <ion-item>
+      <ion-input type="tel" formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }"></ion-input>
+    </ion-item>
+    <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">  
+      <span class="danger" *ngIf="f['mobile'].errors['required']">Please enter your mobile number.</span>  
+      <span class="danger" *ngIf="f['mobile'].errors['pattern']">Please enter valid mobile number.</span>  
+    </div>
+
+    <ion-label>Age</ion-label>
+    <ion-item>
+      <ion-input type="text" formControlName="age" [ngClass]="{ 'is-invalid': submitted && f['age'].errors }"></ion-input>
+    </ion-item>
+    <div *ngIf="submitted && f['age'].errors" class="invalid-feedback">  
+      <span class="danger" *ngIf="f['age'].errors['maxlength']">Please enter valid age.</span>  
+    </div>
+
+    <ion-label>Gender</ion-label>
+    <ion-item>
+      <ion-input type="text" formControlName="gender"></ion-input>
+    </ion-item>
+   
+    
+    <ion-label>Country</ion-label>
+    <ion-item>
+      <ion-input type="text" formControlName="country" [ngClass]="{ 'is-invalid': submitted && f['country'].errors }" ></ion-input>        
+    </ion-item>
+    <div *ngIf="submitted && f['country'].errors" class="invalid-feedback">  
+      <span class="danger" *ngIf="f['country'].errors['required']">Please enter country.</span>   
+    </div>
+    
+    <ion-label>City</ion-label>
+    <ion-item>
+      <ion-input type="text"  formControlName="city" [ngClass]="{ 'is-invalid': submitted && f['city'].errors }" ></ion-input>        
+    </ion-item>
+    <div *ngIf="submitted && f['city'].errors" class="invalid-feedback">  
+      <span class="danger" *ngIf="f['city'].errors['required']">Please enter city.</span>   
+    </div>
+
+    <ion-button class="btn__link" expand="block" type="submit" routerDirection="forward" >Submit</ion-button>
+  </form>
+  
+</ion-content>

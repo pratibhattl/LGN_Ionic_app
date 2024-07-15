@@ -1,0 +1,161 @@
+ion-header {
+    ion-title {
+        text-align: center;
+
+        ion-img {
+            max-width: 50px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        span {
+            margin: 10px 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    &:after {
+        display: none;
+    }
+}
+ion-content {
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+
+    .button {
+        --background: #fff;
+        color: var(--ion-color-violet);
+        height: 48px;
+        line-height: 48px;
+        --box-shadow: none;
+        margin: 0;
+    }
+
+    .ticket_details {
+        background: #f0f0f0;
+        padding: 15px;
+        border-radius: 10px 10px 0 0;
+        -webkit-mask-image: url(../../assets/ticket_body.svg);
+        mask-image: url(../../assets/ticket_body.svg);
+        -webkit-mask-size: 100% auto;
+        mask-size: 100% auto;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        mask-position: bottom center;
+        -webkit-mask-position: bottom center;
+
+        .ticket_icon {
+            display: flex;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            background: #ffffff;
+            box-shadow: 1px 1px 1px #ddd;
+    
+            img {
+                max-width: 40px;
+            }
+        }
+        h3 {
+            text-align: center;
+            margin: 0;
+            font-size: 18px;
+            color: #000;
+        }
+    }
+    .ticket_footer {
+        background: #ffffff;
+        padding: 15px;
+        border-radius: 0 0 10px 10px;
+        -webkit-mask-image: url(../../assets/ticket_footer.svg);
+        mask-image: url(../../assets/ticket_footer.svg);
+        -webkit-mask-size: 100% auto;
+        mask-size: 100% auto;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;  
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        ion-row {
+            width: 100%;
+        }
+        ion-grid {
+            width: 100%;
+            flex: 0 0 100%;
+        }
+        ion-item {
+            --padding-start: 10px;
+            --padding-end: 10px;
+
+            &.full {
+                flex: 1 0 0%;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            h6 {
+                font-size: 12px;
+                color: #717171;
+                padding: 0;
+            }
+            p {
+                font-weight: 500;
+                font-size: 16px;
+            }
+
+            ion-label {
+                white-space: normal;
+            }
+        }
+
+        h6 {
+            font-size: 12px;
+            color: #717171;
+            margin: 0;
+            padding: 0 5px;
+        }
+
+        figure {
+            width: 100%;
+            padding-bottom: 100%;
+            position: relative;
+            margin: 0;
+
+            img {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    }
+}
+
+ion-footer {
+
+    &:before {
+        display: none;
+    }
+    .button {
+        --background: #fff;
+        color: var(--ion-color-violet);
+        height: 48px;
+        line-height: 48px;
+        --box-shadow: none;
+        margin: 15px;
+    }
+    ion-item {
+        margin: 15px;
+        border-radius: 4px;
+        --highlight-color-focused: #A349A4;
+        --ripple-color: #A349A4;
+    }
+}

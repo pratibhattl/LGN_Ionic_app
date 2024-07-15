@@ -1,0 +1,7 @@
+{
+  "name": "lgn_ionic_app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,89 @@
+ion-header {
+    ion-title {
+        text-align: center;
+
+        ion-img {
+            max-width: 50px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        span {
+            margin: 10px 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+ion-content {
+    --background: #212121;
+    --padding-top: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    --color: #fff;
+
+    ion-list {
+        background: #212121;
+        
+        ion-item {
+            --background: #212121;
+
+            ion-avatar {
+                width: 60px;
+                height: 60px;
+            }
+
+            ion-label {
+                font-size: 16px;
+                color: rgba(255,255,255,0.6);
+                white-space: normal;
+
+                h5 {
+                    color: #fff;
+                    font-size: 18px;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+            ion-note {
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+    }
+    .table>:not(caption)>*>* {
+        padding: 3px;
+    }
+    .sticker {
+        max-width: 24px;
+    }
+    .leader_board .table {
+        font-size: 14px;
+        width: 100%;
+    }
+    .leader_board table th {
+        background: transparent;
+        color: #808080;
+        font-weight: 400;
+        border: none;
+    }
+    .leader_board table th:first-child, .leader_board table th:last-child {
+        text-align: center;
+    }
+    .leader_board table td {
+        color: #aaa;
+        background: transparent;
+        border-bottom: none;
+        border-right: 1px solid #696969;
+    }
+    .leader_board table td:last-child {
+        border: none;
+    }
+    .leader_board table tr:first-child td  {
+        background: #4d4d4d;
+    }
+    .center {
+        margin: 23%;
+    }
+}

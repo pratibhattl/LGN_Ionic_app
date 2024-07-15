@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="charcoal">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="power-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="supportForm" (ngSubmit)="submitData()">
+    <ion-label>Name</ion-label>
+    <ion-item>
+      <ion-input type="text" placeholder="Enter your Name" formControlName="name" [ngClass]="{'is-invalid': submitted && f['name'].errors}"></ion-input>
+    </ion-item>
+    <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+      <span class="danger" *ngIf="f['name'].errors['required']">Please enter your name.</span>
+      <span class="danger" *ngIf="f['name'].errors['cannotContainSpace']">Please enter your valid name.</span>
+    </div>
+
+    <ion-label>Email</ion-label>
+    <ion-item>
+      <ion-input type="email" placeholder="Enter your email address" formControlName="email" [ngClass]="{'is-invalid' : submitted && f['email'].errors}"></ion-input>
+    </ion-item>
+    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+      <span class="danger" *ngIf="f['email'].errors['required']">Email is required</span>
+      <span class="danger" *ngIf="f['email'].errors['pattern']">Please enter your valid email</span>
+    </div>
+
+    <ion-label>Subject</ion-label>
+    <ion-item>
+      <ion-input type="text" placeholder="Enter your Subjects" formControlName="subject" [ngClass]="{'is-invalid': submitted && f['subject'].errors}"></ion-input>
+    </ion-item>
+    <div *ngIf="submitted && f['subject'].errors" class="invalid-feedback">
+      <span class="danger" *ngIf="f['subject'].errors['required']">Please enter subject.</span>
+      <span class="danger" *ngIf="f['subject'].errors['cannotContainSpace']">Please enter valid subject.</span>
+    </div> 
+
+    <ion-label>Message</ion-label>
+    <ion-item>
+      <ion-textarea type="password" placeholder="Enter your message" formControlName="message" [ngClass]="{'is-invalid': submitted && f['message'].errors}"></ion-textarea>
+      </ion-item>
+      <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+        <span class="danger" *ngIf="f['message'].errors['required']">Please enter message.</span>
+        <span class="danger" *ngIf="f['message'].errors['cannotContainSpace']">Please enter valid message.</span>
+      </div>
+  
+    <ion-button class="btn__link" expand="block"  routerDirection="forward" type="submit">Submit</ion-button>
+  </form>
+</ion-content>

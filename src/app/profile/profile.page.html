@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="charcoal">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="power-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-avatar slot="start" >
+        <div  class="profile-pic-container">
+          <img *ngIf="userDetails?.profileImage" [src]="userDetails?.profileImage"  alt="Profile Picture" class="profile-pic"/>
+          <img *ngIf="!userDetails?.profileImage" src="../../assets/user_avatar.png" class="profile-pic">
+          <!-- <div >
+            <ion-icon name="camera" class="camera-icon"></ion-icon>
+          </div> -->
+          <input type="file" (change)="onFileSelected($event)" accept="image/*"  />
+       
+        </div>
+        <!-- <div class="hover-overlay">
+          <img [src]="userDetails?.profileImage" >     
+          <img *ngIf="!userDetails?.profileImage" src="../../assets/user_avatar.png">
+        </div> -->
+      </ion-avatar>
+      <!-- <input type="file" (change)="onFileSelected($event)" accept="image/*"/> -->
+      <ion-label>
+        <h4>{{userDetails?.name}}</h4>    
+        <p  (click)="updateProfile()">Edit Profile</p>
+      </ion-label>
+      <ion-note slot="end">
+        <img src="../../assets/sticker.png" class="sticker">
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Age</ion-label>
+      <ion-note slot="end">{{userDetails?.age}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Country</ion-label>
+      <ion-note slot="end">{{userDetails?.country}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>City</ion-label>
+      <ion-note slot="end">{{userDetails?.city}}</ion-note>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label>Stream Hour Watched</ion-label>
+      <ion-note slot="end">{{streaming_hour
+        }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Correct Prediction</ion-label>
+      <ion-note slot="end">{{corect_prediction}}</ion-note>
+    </ion-item> -->
+    <!-- <ion-item>
+      <ion-label>Prediction Ratio:</ion-label>
+      <ion-note slot="end">{{ratio}}</ion-note>
+    </ion-item> -->
+  </ion-list>
+</ion-content>

@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-toolbar color="violet">
+    <ion-buttons slot="start" (click)="dismiss()">
+      <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title><ion-img src="../../assets/white-logo.png" class="logo_item"></ion-img> <span>Ticket Details</span></ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="violet">
+  <div>
+    <div class="ticket_details">
+      <div class="ticket_icon">
+        <img src="../../assets/ticket.png">
+      </div>
+      <h3>#MRWST202221</h3>
+    </div>
+    <div class="ticket_footer">
+      <ion-row>
+        <ion-item class="full">
+          <ion-label>
+            <h6>Status of work process</h6>
+            <p>Ongoing</p>
+          </ion-label>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item class="full">
+          <ion-label>
+            <h6>Complain Date</h6>
+            <p>9th September, 2022</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h6>Complain Time</h6>
+            <p>10:30 AM</p>
+          </ion-label>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item class="full">
+          <ion-label>
+            <h6>Assign By:</h6>
+            <p>Prabir Das</p>
+          </ion-label>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item class="full">
+          <ion-label>
+            <h6>Assign Date:</h6>
+            <p>9th September, 2022</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h6>Assign Time</h6>
+            <p>12:30 PM</p>
+          </ion-label>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item class="full">
+          <ion-label>
+            <h6>Station / Rack:</h6>
+            <p>Kavi Subhas</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item class="full">
+          <ion-label>
+            <h6>Gear of fault:</h6>
+            <p>Camera</p>
+          </ion-label>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item class="full">
+          <ion-label>
+            <h6>Faliure Description:</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </ion-label>
+        </ion-item>
+      </ion-row>
+
+      <ion-grid>
+        <ion-row>
+          <h6>Uploaded Image</h6>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <figure>
+              <img src="https://via.placeholder.com/150">
+            </figure>
+          </ion-col>
+          <ion-col size="4">
+            <figure>
+              <img src="https://via.placeholder.com/150">
+            </figure>
+          </ion-col>
+          <ion-col size="4">
+            <figure>
+              <img src="https://via.placeholder.com/150">
+            </figure>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <h6>Uploaded Video</h6>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <figure>
+              <img src="https://via.placeholder.com/150">
+            </figure>
+          </ion-col>
+          <ion-col size="6">
+            <figure>
+              <img src="https://via.placeholder.com/150">
+            </figure>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="violet">
+    <ion-button expand="block">Edit Ticket</ion-button>
+  </ion-toolbar>
+</ion-footer>

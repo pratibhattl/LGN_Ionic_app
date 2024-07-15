@@ -1,0 +1,206 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+/* Barlow Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+/* Violet */
+.ion-color-violet {
+	--ion-color-base: var(--ion-color-violet);
+	--ion-color-base-rgb: var(--ion-color-violet-rgb);
+	--ion-color-contrast: var(--ion-color-violet-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-violet-contrast-rgb);
+	--ion-color-shade: var(--ion-color-violet-shade);
+	--ion-color-tint: var(--ion-color-violet-tint);
+}
+.ion-color-blood {
+    --ion-color-base: var(--ion-color-blood);
+    --ion-color-base-rgb: var(--ion-color-blood-rgb);
+    --ion-color-contrast: var(--ion-color-blood-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-blood-contrast-rgb);
+    --ion-color-shade: var(--ion-color-blood-shade);
+    --ion-color-tint: var(--ion-color-blood-tint);
+}
+.ion-color-charcoal {
+    --ion-color-base: var(--ion-color-charcoal);
+    --ion-color-base-rgb: var(--ion-color-charcoal-rgb);
+    --ion-color-contrast: var(--ion-color-charcoal-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-charcoal-contrast-rgb);
+    --ion-color-shade: var(--ion-color-charcoal-shade);
+    --ion-color-tint: var(--ion-color-charcoal-tint);
+}
+body {
+    --ion-font-family: 'Barlow', sans-serif;
+    --ion-font-family: "Space Grotesk", sans-serif;
+}
+.f-400 {
+    font-weight: 400 !important;
+}
+.f-500 {
+    font-weight: 500 !important;
+}
+.f-600 {
+    font-weight: 600 !important;
+}
+.f-700 {
+    font-weight: 700 !important;
+}
+.f-800 {
+    font-weight: 800 !important;
+}
+.m-0 {
+    margin: 0 !important;
+}
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+.p-0 {
+    padding: 0 !important;
+}
+.pr-0 {
+    padding-right: 0 !important;
+}
+.pl-3 {
+    padding-left: 3px !important;
+}
+.p-grid-0 {
+    --ion-grid-padding: 0 !important;
+}
+.p-col-0 {
+    --ion-grid-column-padding: 0 !important;
+}
+.border-0 {
+    border: 0 !important;
+}
+.border-radius-top-right-0 {
+    border-top-right-radius: 0 !important;
+}
+.border-radius-bottom-right-0 {
+    border-bottom-right-radius: 0 !important;
+}
+.border-radius-top-left-0 {
+    border-top-left-radius: 0 !important;
+}
+.border-radius-bottom-left-0 {
+    border-bottom-left-radius: 0 !important;
+}
+.d-block {
+    display: block !important;
+}
+.d-inline-block {
+    display: inline-block !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.d-inline-flex {
+    display: inline-flex !important;
+}
+.d-column {
+    flex-direction: column !important;
+}
+.align-items-start {
+    align-items: flex-start !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.text-right {
+    text-align: right !important;
+}
+ion-input {
+    --placeholder-color: #A0A0A0 !important;
+    --placeholder-opacity: 1 !important;
+    min-height: 48px;
+}
+ion-select {
+    width: 100%;
+    --placeholder-color: #A0A0A0;
+    --placeholder-opacity: 1;
+}
+.btn__link {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 48px;
+    text-transform: capitalize;
+    min-height: 48px;
+    color: #ffffff;
+    --background: var(--ion-color-blood);
+    --border-radius: 3px;
+    --background-focused-opacity: 1;
+    --background-hover-opacity: 1;
+    --box-shadow: none;
+    letter-spacing: 0;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.btn__link:hover {
+    color: #000000;
+}
+.btn__link__outline {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 48px;
+    text-transform: capitalize;
+    min-height: 48px;
+    color: var(--ion-color-blood);
+    --background: #ffffff;
+    --border-radius: 10px;
+    --box-shadow:  none;
+    letter-spacing: 0;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.w-100 {
+    width: 100% !important;
+}
+.text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.text.link_text span {
+    font-weight: 500;
+    color: var(--ion-color-blood);
+}
+.page_height_ful {
+    min-height: 90vh;
+}

@@ -1,0 +1,290 @@
+ion-header {
+    ion-title {
+        text-align: center;
+
+        ion-img {
+            max-width: 50px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        span {
+            margin: 10px 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+ion-content {
+    --background: #212121;
+    --padding-top: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    --color: #fff;
+
+    .table>:not(caption)>*>* {
+        padding: 3px;
+    }
+
+    ion-row {
+        figure {
+            margin: 0 0 10px;
+        }
+        figcaption {
+            font-size: 12px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        h4 {
+            margin: 0;
+            color: #fff;
+            font-size: 14px;
+        }
+    }
+    .leader_board {
+        display: block;
+    }
+    .leader_board_heading {
+        font-size: 14px;
+        padding: 10px 0;
+        background: #4d4d4d;
+        text-align: center;
+        color: #fff;
+    }
+    .leader_board .table {
+        font-size: 14px;
+        width: 100%;
+    }
+    .leader_board table th {
+        background: transparent;
+        color: #808080;
+        font-weight: 400;
+        border: none;
+    }
+    .leader_board table th:first-child, .leader_board table th:last-child {
+        text-align: center;
+    }
+    .leader_board table td {
+        color: #aaa;
+        background: transparent;
+        border-bottom: none;
+        border-right: 1px solid #696969;
+    }
+    .leader_board table td:last-child {
+        border: none;
+    }
+    .leader_board table tr:first-child td  {
+        background: #4d4d4d;
+    }
+
+    .welcome_block {
+        text-align: center;
+
+        .welcome_icon {
+            display: flex;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto 20px;
+            background: #ffffff;
+            box-shadow: 1px 1px 1px #ddd;
+    
+            img {
+                max-width: 30px;
+            }
+        }
+        h3 {
+            text-align: center;
+            margin: 0;
+            font-size: 18px;
+        }
+        p {
+            padding: 0 60px;
+            text-align: center;
+            color: #717171;
+            font-size: 13px;
+            margin: 20px 0;
+        }
+        .button {
+            height: 41px;
+            line-height: 41px;
+            --box-shadow: none;
+            margin: 0 auto;
+            --padding-start: 30px;
+            --padding-end: 30px;
+            ion-icon {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    ion-segment {
+        margin-bottom: 10px;
+        border-radius: 4px;
+
+        ion-segment-button {
+            margin: 3px 1px;
+            --border-radius: 4px;
+            --indicator-box-shadow: none;
+        }
+    }
+
+    .ticket_block {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        filter: drop-shadow(2px 2px 1px #ccc);
+        margin: 0 0 10px;
+
+        .ticket_top {
+            display: block;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            background: #fff;
+            -webkit-mask-image: url(../../assets/ticket_body.svg);
+            mask-image: url(../../assets/ticket_body.svg);
+            -webkit-mask-size: 100% auto;
+            mask-size: 100% auto;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            mask-position: bottom center;
+            -webkit-mask-position: bottom center;
+            border-bottom: 2px solid #ddd;
+
+            h6 {
+                text-transform: uppercase;
+                margin: 0;
+                font-size: 12px;
+                color: var(--ion-color-violet);
+            }
+            p {
+                margin: 0;
+            }
+        }
+        .ticket_footer {
+            padding: 15px 20px;
+            border-radius: 0 0 10px 10px;
+            background:  #ddd;
+            color: #000;
+            -webkit-mask-image: url(../../assets/ticket_footer.svg);
+            mask-image: url(../../assets/ticket_footer.svg);
+            -webkit-mask-size: 100% auto;
+            mask-size: 100% auto;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;  
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h5 {
+                margin: 0;
+                text-transform: uppercase;
+                font-size: 15px;
+                font-weight: 600;
+            }
+        }
+    }
+    .ticket_box {
+        display: flex;
+        margin: 0 auto 10px;
+        filter: drop-shadow(1px 1px 1px #ccc);
+
+        .ticket_date {
+            height: 100px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            background: var(--ion-color-violet);
+            padding: 10px 20px;
+            color: #fff;
+            -webkit-mask-image: url(../../assets/ticket_bg.svg);
+            mask-image: url(../../assets/ticket_bg.svg);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            mask-position: left center;
+            -webkit-mask-position: left center;
+            border-radius: 10px 0 0 10px;
+            -webkit-mask-size: auto 100%;
+            mask-size: auto 100%;
+
+            ion-text {
+                font-weight: 700;
+                text-transform: uppercase;
+                width: 100%;
+                border-radius: 2px;
+                padding: 0 6px;
+                line-height: 20px;
+                background: #fff;
+                font-size: 11px;
+                text-align: center;
+                max-width: 100%;
+            }
+
+            h2 {
+                font-size: 15px;
+                margin: 0;
+                line-height: 1;
+
+                span {
+                    font-size: 27px;
+                }
+            }
+            p {
+                margin: 0;
+            }
+        }
+        .ticket_content {
+            padding: 10px;
+            flex: 1 0 0%;
+            background: #fff;
+            -webkit-mask-image: url(../../assets/ticket_bg.svg);
+            mask-image: url(../../assets/ticket_bg.svg);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            mask-position: right center;
+            -webkit-mask-position: right center;
+            border-radius: 0 10px 10px 0;
+            -webkit-mask-size: auto 100%;
+            mask-size: auto 100%;
+
+            h6 {
+                text-transform: uppercase;
+                margin: 0;
+                font-size: 11px;
+                color: var(--ion-color-violet);
+            }
+            p {
+                margin: 0;
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+ion-footer {
+    &:before {
+        display: none;
+    }
+
+    .addcomplain {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        border-radius: 4px;
+        border: 2px dashed var(--ion-color-violet);
+        margin: 10px;
+        color:  var(--ion-color-violet);
+        font-weight: 500;
+
+        ion-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    }
+}

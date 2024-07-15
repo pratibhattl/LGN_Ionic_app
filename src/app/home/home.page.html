@@ -1,0 +1,278 @@
+<ion-header>
+  <ion-toolbar color="charcoal">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <ion-buttons slot="end">
+      <!-- <ion-button (click)="logout()"> -->
+      <ion-button   routerLink="/profile">
+
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <swiper-container class="collection_banner" [slidesPerView]="1.1" [loop]="false" [pager]="true" [spaceBetween]="10" [initialSlide]="0">
+    <swiper-slide *ngFor="let banner of allbanners">
+      <img [src]="banner.image">
+    </swiper-slide>
+  </swiper-container>
+  <!-- <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <img src="../../assets/1706281749_1681757960.create tournament banner.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/1706281760_1696158660.WEB BANNER-1.png">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/1706281767_1699085645.WEB BANNER PP acer 4.png">
+    </ion-slide>
+  </ion-slides> -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h4>Upcoming Tournament</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col size="6" *ngFor="let tour of tournaments let i=index"  (click)="tournamentbyId(tour)">      
+        <figure >
+          <img [src]="tour.image">
+    </figure>
+        <figcaption>{{tour.title}}</figcaption>
+    </ion-col>
+      <!-- <ion-col size="6" (click)="tournamentFirst()">
+        <figure >
+          <img src="../../assets/1706279387_1706103544_5994.jpg">
+        </figure>
+        <figcaption>This is a test tournament 1</figcaption>
+      </ion-col>
+      <ion-col size="6" (click)="tournamentSecond()">
+        <figure routerLink="/details">
+          <img src="../../assets/1706279387_1706103544_5994.jpg">
+        </figure>
+        <figcaption>This is a test tournament 2</figcaption>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+<!--  
+  <div class="leader_board">
+    <div class="leader_board_heading">
+        Leaderboard
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th align="center">#</th>
+                <th>Name</th>
+                <th>Correct Predictions</th>
+                <th align="center">Total Time</th>
+            </tr>
+        </thead>
+        <tbody >
+         
+            <tr *ngFor="let user of users; let i=index">
+           
+                <td align="center">{{i+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.correct_predictions}}</td>
+                <td align="center">{{user.total_time}} seconds</td>
+            </tr>
+              
+                        </tbody>
+    </table>
+</div> -->
+  
+  <!-- <ion-segment mode="ios" color="violet" [(ngModel)]="type">
+    <ion-segment-button value="my">
+      <ion-label>My Complains</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="open">
+      <ion-label>Open Complains</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="closed">
+      <ion-label>Closed Complains</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="type">
+
+    <div *ngSwitchCase="'my'">
+      <div class="welcome_block">
+        <div class="welcome_icon">
+          <img src="../../assets/waving-hand.png">
+        </div>
+        <h3>Hi Avishek, Welcome to Kolkata Metro</h3>
+        <p>You can create complain tickets by click below button</p>
+
+        <ion-button size="small" color="violet" routerLink="/addcomplain" routerDirection="forward">
+          <ion-icon name="duplicate-outline"></ion-icon> Add Complain
+        </ion-button>
+      </div>
+    </div>
+    <div *ngSwitchCase="'open'">
+      <div class="ticket_box" (click)="presentModal()">
+        <div class="ticket_date">
+          <h2>10th AUG<br/><span>2022</span></h2>
+          <p>10:30 am</p>
+          <ion-text color="primary">New</ion-text>
+        </div>
+        <div class="ticket_content">
+          <table>
+            <tr>
+              <td><h6>Station / Rack: </h6><p>Kavi Subhas</p></td>
+              <td><h6>Gear of fault: </h6><p>Camera</p></td>
+            </tr>
+            <tr><td style="height: 5px;"></td></tr>
+            <tr>
+              <td colspan="2">
+                <h6>Faliure Description: </h6>
+                <p>Station entrance no 5 front camera not working.</p>
+              </td>        
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="ticket_box" (click)="presentModal()">
+        <div class="ticket_date">
+          <h2>10th AUG<br/><span>2022</span></h2>
+          <p>10:30 am</p>
+          <ion-text color="primary">New</ion-text>
+        </div>
+        <div class="ticket_content">
+          <table>
+            <tr>
+              <td><h6>Station / Rack: </h6><p>Kavi Subhas</p></td>
+              <td><h6>Gear of fault: </h6><p>Camera</p></td>
+            </tr>
+            <tr><td style="height: 5px;"></td></tr>
+            <tr>
+              <td colspan="2">
+                <h6>Faliure Description: </h6>
+                <p>Station entrance no 5 front camera not working.</p>
+              </td>        
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="ticket_box" (click)="presentModal()">
+        <div class="ticket_date">
+          <h2>10th AUG<br/><span>2022</span></h2>
+          <p>10:30 am</p>
+          <ion-text color="secondary">Ongoing</ion-text>
+        </div>
+        <div class="ticket_content">
+          <table>
+            <tr>
+              <td><h6>Station / Rack: </h6><p>Kavi Subhas</p></td>
+              <td><h6>Gear of fault: </h6><p>Camera</p></td>
+            </tr>
+            <tr><td style="height: 5px;"></td></tr>
+            <tr>
+              <td colspan="2">
+                <h6>Faliure Description: </h6>
+                <p>Station entrance no 5 front camera not working.</p>
+              </td>        
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="ticket_box" (click)="presentModal()">
+        <div class="ticket_date">
+          <h2>10th AUG<br/><span>2022</span></h2>
+          <p>10:30 am</p>
+          <ion-text color="secondary">Ongoing</ion-text>
+        </div>
+        <div class="ticket_content">
+          <table>
+            <tr>
+              <td><h6>Station / Rack: </h6><p>Kavi Subhas</p></td>
+              <td><h6>Gear of fault: </h6><p>Camera</p></td>
+            </tr>
+            <tr><td style="height: 5px;"></td></tr>
+            <tr>
+              <td colspan="2">
+                <h6>Faliure Description: </h6>
+                <p>Station entrance no 5 front camera not working.</p>
+              </td>        
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'closed'">
+      <div class="ticket_box" (click)="presentModal()">
+        <div class="ticket_date">
+          <h2>10th AUG<br/><span>2022</span></h2>
+          <p>10:30 am</p>
+          <ion-text color="danger">Closed</ion-text>
+        </div>
+        <div class="ticket_content">
+          <table>
+            <tr>
+              <td><h6>Station / Rack: </h6><p>Kavi Subhas</p></td>
+              <td><h6>Gear of fault: </h6><p>Camera</p></td>
+            </tr>
+            <tr><td style="height: 5px;"></td></tr>
+            <tr>
+              <td colspan="2">
+                <h6>Faliure Description: </h6>
+                <p>Station entrance no 5 front camera not working.</p>
+              </td>        
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="ticket_box" (click)="presentModal()">
+        <div class="ticket_date">
+          <h2>10th AUG<br/><span>2022</span></h2>
+          <p>10:30 am</p>
+          <ion-text color="danger">Closed</ion-text>
+        </div>
+        <div class="ticket_content">
+          <table>
+            <tr>
+              <td><h6>Station / Rack: </h6><p>Kavi Subhas</p></td>
+              <td><h6>Gear of fault: </h6><p>Camera</p></td>
+            </tr>
+            <tr><td style="height: 5px;"></td></tr>
+            <tr>
+              <td colspan="2">
+                <h6>Faliure Description: </h6>
+                <p>Station entrance no 5 front camera not working.</p>
+              </td>        
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="ticket_box" (click)="presentModal()">
+        <div class="ticket_date">
+          <h2>10th AUG<br/><span>2022</span></h2>
+          <p>10:30 am</p>
+          <ion-text color="danger">Closed</ion-text>
+        </div>
+        <div class="ticket_content">
+          <table>
+            <tr>
+              <td><h6>Station / Rack: </h6><p>Kavi Subhas</p></td>
+              <td><h6>Gear of fault: </h6><p>Camera</p></td>
+            </tr>
+            <tr><td style="height: 5px;"></td></tr>
+            <tr>
+              <td colspan="2">
+                <h6>Faliure Description: </h6>
+                <p>Station entrance no 5 front camera not working.</p>
+              </td>        
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+</ion-content>
