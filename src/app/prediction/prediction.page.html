@@ -3,9 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item" routerLink="/home"></ion-img></ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button click="logout()">
         <ion-icon name="power-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -39,4 +39,10 @@
     </ng-container>
     
   </div>
+  <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
 </ion-content>

@@ -27,6 +27,9 @@ export class WalletPage implements OnInit {
       }
     });
   }
+  logout(){
+  	this.apiService.logout();
+  }
   }
 
 
