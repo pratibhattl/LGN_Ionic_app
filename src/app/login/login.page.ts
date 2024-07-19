@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      userName: new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]), 
+      userName: new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
       password:  new FormControl('',[Validators.required, Validators.minLength(5)]),
     })
   }
@@ -47,7 +47,7 @@ export class LoginPage implements OnInit {
       this.apiService.logInUser(loginData).subscribe(res => {
         this.helper.dismissLoader();
         if(res.status=='1'){
-          this.apiService.storeLocally(res)          
+          this.apiService.storeLocally(res)
           this.helper.dismissLoader();
         }else{
           this.helper.showError(res.message)
