@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item" ></ion-img></ion-title>
     <ion-buttons slot="end">
       <!-- <ion-button (click)="logout()"> -->
       <ion-button   routerLink="/profile">
@@ -59,6 +59,14 @@
       </ion-col> -->
     </ion-row>
   </ion-grid>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 <!--  
   <div class="leader_board">
     <div class="leader_board_heading">

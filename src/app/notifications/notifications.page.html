@@ -3,9 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item" routerLink="/home"></ion-img></ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="logout()">
         <ion-icon name="power-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -31,6 +31,8 @@
         >Unfollow streamer</p>
         <p *ngIf="notifi.notifiEle"
         >Follow streamer</p>
+        <p *ngIf="notifi.notifiTen"
+        >Create streamer request sent</p>
        <p *ngIf="notifi.notifiNine"
        >new streaming request has been submitted by a user. Please review and process the request promptly.</p>
     

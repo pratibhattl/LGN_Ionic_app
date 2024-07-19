@@ -38,6 +38,7 @@ export class DetailsPage implements OnInit {
   followers = []
   streamerName = '';
   streamerTitle = '';
+  streamerDes='';
   streamerImage = '';
   userDetails:any= '';
   followersArr: any;
@@ -46,6 +47,9 @@ export class DetailsPage implements OnInit {
   checkC= false;
   checkD = false
   leaderFlag= false
+  items: any[] = [];
+  data: any[] = [];
+  disableFlag = false
 
   constructor(private apiService: AllapiService, private helper: HelperService,
      private _helper: HelperService,private sanitizer: DomSanitizer
@@ -59,7 +63,7 @@ export class DetailsPage implements OnInit {
     //pusher
      this.apiService.bind('tournament-question-notification', (data: any) => {
       console.log('Received tournament question:', data);
-      // this.tournamentQus();
+      this.tournamentQus();
     });
     
     this.tournaments = JSON.parse(localStorage.getItem("tourDetails")!);
@@ -134,6 +138,7 @@ export class DetailsPage implements OnInit {
         console.log(this.detail.tournament_by)
         this.streamerName = this.detail.tournament_by;
         this.streamerTitle = this.detail.title;
+        this.streamerDes= this.detail.description      
         this.streamerImage = this.detail.image
         this.chatDetails = this.detail.comments
         this.followersArr = res.userdetails.followers
@@ -164,57 +169,80 @@ tournamentQus(){
     this.tQustion = res.questions;
     if (res.status == '200') {
       this.tQustion = res.questions;
-      for (let i = 0; i < this.tQustion.length; i++) {
+      for(let i = 0; i < this.tQustion.length; i++) {
+     
+        for(let j=0; j < this.tQustion[i].options.length;j++){
+          if(this.tQustion[i].options[j].users.length >0){
+        
+          for(let k=0; k < this.tQustion[i].options[j].users.length;k++){
+               // console.log(this.tQustion[i].options[j].users[j],this.loginUser._id);
+          console.log(this.tQustion[i].options[j].users[k],this.loginUser._id);
 
-        if (this.tQustion[i].optionA.users.length > 0) {
-
-          console.log(this.tQustion[i].optionA.users.length)
-          for (let j = 0; j < this.tQustion[i].optionA.users.length; j++) {
-            // console.log(this.tQustion[i].optionA.users,this.loginUser._id,'11')
-            //   console.log(this.tQustion[i].optionA.users[j],this.loginUser._id,'22')
-            if (this.tQustion[i].optionA.users[j] === this.loginUser._id) {
-              this.tQustion[i].optionA.userSelectA = true;
-              this.checkA = true
-              console.log(this.tQustion[i].optionA.userSelectA, 'flag')
-            }
-            // else {
-            //   this.tQustion[i].optionA.userSelectA = false;
-            // }
+          if(this.tQustion[i].options[j].users[k] == this.loginUser._id){
+            this.tQustion[i].options[j].userSelectA = true
+            this.tQustion[i].disableFlag= true
+            console.log(this.tQustion[i].options[j].userSelectA)
+            console.log(this.tQustion[i].disableFlag)
           }
 
-        }
-        if (this.tQustion[i].optionB.users.length > 0) {
-          for (let j = 0; j < this.tQustion[i].optionB.users.length; j++) {
-
-            if (this.tQustion[i].optionB.users[j] === this.loginUser._id) {
-              this.tQustion[i].optionB.userSelectA = true;
-              this.checkB= true
-            }
           }
+       
         }
-        if (this.tQustion[i].optionC.users.length > 0) {
-          for (let j = 0; j < this.tQustion[i].optionC.users.length; j++) {
-
-            if (this.tQustion[i].optionC.users[j] === this.loginUser._id) {
-              this.tQustion[i].optionC.userSelectA = true;
-            }
-            // else {
-            //   this.tQustion[i].optionC.userSelectA = false;
-            // }
-          }
+    
         }
-        if (this.tQustion[i].optionD.users.length > 0) {
-          for (let j = 0; j < this.tQustion[i].optionD.users.length; j++) {
-
-            if (this.tQustion[i].optionD.users[j] === this.loginUser._id) {
-              this.tQustion[i].optionD.userSelectA = true;
-            }
-            // else {
-            //   this.tQustion[i].optionD.userSelectA = false;
-            // }
-          }
-        }
+      
       }
+      // for (let i = 0; i < this.tQustion.length; i++) {
+
+      //   if (this.tQustion[i].optionA.users.length > 0) {
+
+      //     console.log(this.tQustion[i].optionA.users.length)
+      //     for (let j = 0; j < this.tQustion[i].optionA.users.length; j++) {
+      //       // console.log(this.tQustion[i].optionA.users,this.loginUser._id,'11')
+      //       //   console.log(this.tQustion[i].optionA.users[j],this.loginUser._id,'22')
+      //       if (this.tQustion[i].optionA.users[j] === this.loginUser._id) {
+      //         this.tQustion[i].optionA.userSelectA = true;
+      //         this.checkA = true
+      //         console.log(this.tQustion[i].optionA.userSelectA, 'flag')
+      //       }
+      //       // else {
+      //       //   this.tQustion[i].optionA.userSelectA = false;
+      //       // }
+      //     }
+
+      //   }
+      //   if (this.tQustion[i].optionB.users.length > 0) {
+      //     for (let j = 0; j < this.tQustion[i].optionB.users.length; j++) {
+
+      //       if (this.tQustion[i].optionB.users[j] === this.loginUser._id) {
+      //         this.tQustion[i].optionB.userSelectA = true;
+      //         this.checkB= true
+      //       }
+      //     }
+      //   }
+      //   if (this.tQustion[i].optionC.users.length > 0) {
+      //     for (let j = 0; j < this.tQustion[i].optionC.users.length; j++) {
+
+      //       if (this.tQustion[i].optionC.users[j] === this.loginUser._id) {
+      //         this.tQustion[i].optionC.userSelectA = true;
+      //       }
+      //       // else {
+      //       //   this.tQustion[i].optionC.userSelectA = false;
+      //       // }
+      //     }
+      //   }
+      //   if (this.tQustion[i].optionD.users.length > 0) {
+      //     for (let j = 0; j < this.tQustion[i].optionD.users.length; j++) {
+
+      //       if (this.tQustion[i].optionD.users[j] === this.loginUser._id) {
+      //         this.tQustion[i].optionD.userSelectA = true;
+      //       }
+      //       // else {
+      //       //   this.tQustion[i].optionD.userSelectA = false;
+      //       // }
+      //     }
+      //   }
+      // }
 
     } else {
     }
@@ -227,6 +255,7 @@ leaderboard(){
   this.apiService.tournamentLeader(tournamenid).subscribe(res => {
     console.log(res)
     this.leaderDetails = res.leaderboard;
+    this.loadInitialData() ;
     if(this.leaderDetails.length==0) {
       this.leaderFlag= true;
     }
@@ -236,6 +265,30 @@ leaderboard(){
     } else {
     }
   });
+}
+
+loadInitialData() {
+  for (let i = 0; i <=1; i++) {
+    this.items.push(this.leaderDetails[i]);
+  }
+  // Simulate data from server
+  for (let i = 2; i <= 100; i++) {
+    this.data.push(this.leaderDetails[i]);
+  }
+
+}
+
+loadData(event) {
+  setTimeout(() => {
+    if (this.data.length === 0) {
+      event.target.disabled = true;
+      return;
+    }
+
+    const newItems = this.items.splice(0, 1);
+    this.items.push(...newItems);
+    event.target.complete();
+  }, 500);
 }
 
 wallet (){
@@ -275,19 +328,26 @@ wallet (){
   }
 
   //questionAnswer
-  optionAClick(qus: any, index: number) {
-    if (this.tQustion[index]) {
-      this.tQustion[index].optionA.selected = true
-      this.selectedOption = true
+
+  optionClick(qus: any, option: any,i:number){
+    // console.log(this.tQustion[index])
+    console.log(qus,option,i)
+    console.log(qus)
+    if( this.tQustion[i]) {
+    this.tQustion[i].disableFlag= true
     }
+//  this.tQustion[index].selected= true
+//  console.log(this.tQustion[index])
+
     let qid = qus._id
 
     let data = {
-      "optionNumber": "optionA",
+      "optionNumber": option._id ,
       "userId": this.loginUser._id
     }
     console.log(qid, data)
     this.apiService.sendAnswer(qid, data).subscribe(res => {
+      console.log(res)
       this.tournamentQus();
       this.helper.dismissLoader();
       this.helper.showError(res.message)
@@ -295,59 +355,81 @@ wallet (){
 
     });
     this.helper.dismissLoader();
-  }
-  optionBClick(qus: any, index: number) {
-    if (this.tQustion[index]) {
-      this.tQustion[index].optionB.selected = true
 
-    }
-    let qid = qus._id
-    let data = {
-      "optionNumber": "optionB",
-      "userId": this.loginUser._id
-    }
-    this.apiService.sendAnswer(qid, data).subscribe(res => {
-      this.tournamentQus();
-      this.helper.dismissLoader();
-      this.helper.showError(res.message)
-
-    });
-    this.helper.dismissLoader();
   }
-  optionCClick(qus: any, index: number) {
-    if (this.tQustion[index]) {
-      this.tQustion[index].optionC.selected = true
-    }
-    let qid = qus._id
-    let data = {
-      "optionNumber": "optionC",
-      "userId": this.loginUser._id
-    }
-    this.apiService.sendAnswer(qid, data).subscribe(res => {
-      this.tournamentQus();
-      this.helper.dismissLoader();
-      this.helper.showError(res.message)
+  // optionAClick(qus: any, index: number) {
+  //   if (this.tQustion[index]) {
+  //     this.tQustion[index].optionA.selected = true
+  //     this.selectedOption = true
+  //   }
+  //   let qid = qus._id
 
-    });
-    this.helper.dismissLoader();
-  }
-  optionDClick(qus: any, index: number) {
-    if (this.tQustion[index]) {
-      this.tQustion[index].optionD.selected = true
-    }
-    let qid = qus._id
-    let data = {
-      "optionNumber": "optionD",
-      "userId": this.loginUser._id
-    }
-    this.apiService.sendAnswer(qid, data).subscribe(res => {
-      this.tournamentQus();
-      this.helper.dismissLoader();
-      this.helper.showError(res.message)
+  //   let data = {
+  //     "optionNumber": "optionA",
+  //     "userId": this.loginUser._id
+  //   }
+  //   console.log(qid, data)
+  //   this.apiService.sendAnswer(qid, data).subscribe(res => {
+  //     this.tournamentQus();
+  //     this.helper.dismissLoader();
+  //     this.helper.showError(res.message)
+      
 
-    });
-    this.helper.dismissLoader();
-  }
+  //   });
+  //   this.helper.dismissLoader();
+  // }
+  // optionBClick(qus: any, index: number) {
+  //   if (this.tQustion[index]) {
+  //     this.tQustion[index].optionB.selected = true
+
+  //   }
+  //   let qid = qus._id
+  //   let data = {
+  //     "optionNumber": "optionB",
+  //     "userId": this.loginUser._id
+  //   }
+  //   this.apiService.sendAnswer(qid, data).subscribe(res => {
+  //     this.tournamentQus();
+  //     this.helper.dismissLoader();
+  //     this.helper.showError(res.message)
+
+  //   });
+  //   this.helper.dismissLoader();
+  // }
+  // optionCClick(qus: any, index: number) {
+  //   if (this.tQustion[index]) {
+  //     this.tQustion[index].optionC.selected = true
+  //   }
+  //   let qid = qus._id
+  //   let data = {
+  //     "optionNumber": "optionC",
+  //     "userId": this.loginUser._id
+  //   }
+  //   this.apiService.sendAnswer(qid, data).subscribe(res => {
+  //     this.tournamentQus();
+  //     this.helper.dismissLoader();
+  //     this.helper.showError(res.message)
+
+  //   });
+  //   this.helper.dismissLoader();
+  // }
+  // optionDClick(qus: any, index: number) {
+  //   if (this.tQustion[index]) {
+  //     this.tQustion[index].optionD.selected = true
+  //   }
+  //   let qid = qus._id
+  //   let data = {
+  //     "optionNumber": "optionD",
+  //     "userId": this.loginUser._id
+  //   }
+  //   this.apiService.sendAnswer(qid, data).subscribe(res => {
+  //     this.tournamentQus();
+  //     this.helper.dismissLoader();
+  //     this.helper.showError(res.message)
+
+  //   });
+  //   this.helper.dismissLoader();
+  // }
   onClick() {
 
     let tournamenId = this.tournaments.userId

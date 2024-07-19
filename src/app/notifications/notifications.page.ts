@@ -95,7 +95,11 @@ nodata= false
         }
         if (this.notification[i].type == '1') {
           this.notification[i].notifiOne = true
+        } if (this.notification[i].type == '10') {
+          this.notification[i].notifiTen = true
+          // this.notifiTwel= false
         }
+
         if (this.notification[i].type == '11') {
           this.notification[i].notifiEle = true
           // this.notifiTwel= false
@@ -132,6 +136,9 @@ nodata= false
       //   console.log(this.user.message)
       // }
     });
+  }
+  logout(){
+  	this.apiService.logout();
   }
 }
 

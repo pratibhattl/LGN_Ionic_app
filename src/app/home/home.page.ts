@@ -16,6 +16,8 @@ export class HomePage implements OnInit {
   type: string = 'my';
   users:any
   tournaments:any
+  data: any[] = [];
+  items: any[] = [];
   
   constructor(public modalController: ModalController,private apiService : AllapiService,
     private navCtrl : NavController, private _helper : HelperService) {}
@@ -42,10 +44,13 @@ export class HomePage implements OnInit {
   //get upcomingtour Api
   upcomingApi(){
     this.apiService.tournamentUpcoming().subscribe(res => {
+      console.log(res)
       this.tournaments= res.tournaments ;
+      this.loadInitialData();
       console.log(this.tournaments);
       if(res.status==true){ 
         this.tournaments  = res.tournaments;
+       
       }
     },err=>{
       this._helper.dismissLoader()
@@ -71,6 +76,31 @@ export class HomePage implements OnInit {
     });
     return await modal.present();
   }
+
+  loadInitialData() {
+    for (let i = 0; i <=5; i++) {
+      this.items.push(this.tournaments[i]);
+    }
+    console.log(this.tournaments)
+    // Simulate data from server
+    for (let i = 6; i <= 100; i++) {
+      this.data.push(this.tournaments[i]);
+    }
+  }
+
+  loadData(event) {
+    setTimeout(() => {
+      if (this.data.length === 0) {
+        event.target.disabled = true;
+        return;
+      }
+
+      const newItems = this.data.splice(0, 5);
+      this.items.push(...newItems);
+      event.target.complete();
+    }, 500);
+  }
+
 
   logout(){
   	this.apiService.logout();

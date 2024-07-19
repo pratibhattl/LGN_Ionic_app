@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item" routerLink="/home"></ion-img></ion-title>
     <ion-buttons slot="end">
       <ion-button routerLink="/profile">
         <ion-icon name="person-circle-outline"></ion-icon>
@@ -26,7 +26,7 @@
     <figcaption>
       {{streamerName}}<br/>
       {{streamerTitle}}<br/>
-      <span>Playing PUBG: Battle...</span>
+      <span>{{streamerDes}}</span>
     </figcaption>
     <ion-button (click)="onClick()">
       <ion-icon name="heart-outline"></ion-icon>{{isFollow == true ?'Unfollow' : 'Follow'}}
@@ -200,39 +200,38 @@
         <div  class="predicts" *ngFor="let qus of tQustion; let i=index">
           <h5>CHOOSE YOUR ANSWER</h5>
     
-          <div class="answer" >
-          <label [ngStyle]="tQustion[i].optionA.userSelectA  && {'background': '#d63a41'}" >
+          <div class="answer">
+            <label  *ngFor="let option of qus.options; let j=index" [ngStyle]="tQustion[i].options[j].userSelectA && {'background': '#d63a41'}">
+              
+              <input type="radio" name="options" (click)="optionClick(qus,option,i)" value="A"  id="first" 
+              [disabled]="tQustion[i].disableFlag" >
+              <span  for="first">{{option.text}}</span>
+             
+          </label>
+          <!-- <label [ngStyle]="tQustion[i].optionA.userSelectA  && {'background': '#d63a41'}" >
             <input type="radio" name="options" value="A" (click)="optionAClick(qus,i)" id="first" 
             [disabled]="tQustion[i].optionA.userSelectA ||tQustion[i].optionB.userSelectA || tQustion[i].optionC.userSelectA ||tQustion[i].optionD.userSelectA ||tQustion[i].optionA.selected ||tQustion[i].optionB.selected ||tQustion[i].optionC.selected ||tQustion[i].optionD.selected">
             <span *ngIf="qus.optionA" for="first">{{qus.optionA.text}}</span>
-            <!-- <span *ngIf="qus.optionA.image">
-              <img [src]="qus.optionA.image">
-          </span> -->
+           
         </label>
         <label [ngStyle]="tQustion[i].optionB.userSelectA && {'background-color': '#d63a41'}">
           <input type="radio" name="options" value="B" (click)="optionBClick(qus,i)" id="second" 
           [disabled]="tQustion[i].optionA.userSelectA ||tQustion[i].optionB.userSelectA || tQustion[i].optionC.userSelectA ||tQustion[i].optionD.userSelectA ||tQustion[i].optionA.selected ||tQustion[i].optionB.selected ||tQustion[i].optionC.selected ||tQustion[i].optionD.selected">
           <span *ngIf="qus.optionB" for="third">{{qus.optionB.text}}</span>
-          <!-- <span *ngIf="qus.optionB.image">
-            <img [src]="qus.optionB.image"> 
-        </span> -->
+       
       </label>
       <label [ngStyle]="tQustion[i].optionC.userSelectA && {'background-color': '#d63a41'}">
         <input type="radio" name="options" value="C" id="third"  *ngIf="qus.optionC || qus.optionC_image" (click)="optionCClick(qus,i)" 
         [disabled]="tQustion[i].optionA.userSelectA ||tQustion[i].optionB.userSelectA || tQustion[i].optionC.userSelectA ||tQustion[i].optionD.userSelectA ||tQustion[i].optionA.selected ||tQustion[i].optionB.selected ||tQustion[i].optionC.selected ||tQustion[i].optionD.selected">
         <span *ngIf="qus.optionC" for="third">{{qus.optionC.text}}</span>
-        <!-- <span *ngIf="qus.optionC.image">
-          <img [src]="qus.optionC.image">
-      </span> -->
+      
     </label>
     <label [ngStyle]="tQustion[i].optionD.userSelectA && {'background-color': '#d63a41'}" >
       <input type="radio" name="options" value="D"  (click)="optionDClick(qus,i)" id="four" 
       [disabled]="tQustion[i].optionA.userSelectA ||tQustion[i].optionB.userSelectA || tQustion[i].optionC.userSelectA ||tQustion[i].optionD.userSelectA ||tQustion[i].optionA.selected ||tQustion[i].optionB.selected ||tQustion[i].optionC.selected ||tQustion[i].optionD.selected">
       <span *ngIf="qus.optionD" for="four">{{qus.optionD.text}}</span>
-      <!-- <span *ngIf="qus.optionD.image">
-        <img [src]="qus.optionD.image">
-    </span> -->
-  </label>
+   
+  </label> -->
           </div>
           <h5 >{{qus.question}}</h5>
         
@@ -272,12 +271,12 @@
           <h5>{{qus.question}}</h5>
         </div> -->
       </div>
-      <div class="result_area">
+      <!-- <div class="result_area">
         <div class="result_box">
             <h4>You Won!</h4>
             <p>Rewards: 200 Rupees</p>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- <div class="tab_content" *ngSwitchCase="'wallet'">
       <div >
@@ -382,7 +381,14 @@
                             </tbody>
         </table>
     </div>
+   
     </div>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
   </div>
 </div>

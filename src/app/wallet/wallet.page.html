@@ -3,9 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item"></ion-img></ion-title>
+    <ion-title><ion-img src="../../assets/lgn_logo.png" class="logo_item" routerLink="/home"></ion-img></ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="logout()">
         <ion-icon name="power-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -20,10 +20,10 @@
         <img src="../../assets/lgn_logo.png">
       </ion-avatar>
       <ion-label>        
-      <!-- <h3 style="font-weight: 300;">{{wallet.questionId.tourId.title}}
+      <h3 style="font-weight: 300;">{{wallet.questionId.tourId.title}}
       </h3>
       <p>{{wallet.questionId.question}}
-      </p> -->
+      </p>
       <h5>{{wallet.amount}}</h5>
       </ion-label>
     </ion-item>
