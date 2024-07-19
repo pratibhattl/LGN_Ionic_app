@@ -43,18 +43,18 @@ export class PredictionPage implements OnInit {
 
   }
 
-  loadData(event) {
-    setTimeout(() => {
-      if (this.data.length === 0) {
-        event.target.disabled = true;
-        return;
-      }
+  // loadData(event) {
+  //   setTimeout(() => {
+  //     if (this.data.length === 0) {
+  //       event.target.disabled = true;
+  //       return;
+  //     }
 
-      const newItems = this.items.splice(0, 5);
-      this.items.push(...newItems);
-      event.target.complete();
-    }, 500);
-  }
+  //     const newItems = this.items.splice(0, 5);
+  //     this.items.push(...newItems);
+  //     event.target.complete();
+  //   }, 500);
+  // }
 
   logout(){
   	this.apiService.logout();

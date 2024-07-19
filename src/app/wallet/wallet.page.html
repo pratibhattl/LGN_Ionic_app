@@ -13,8 +13,39 @@
 </ion-header>
 
 <ion-content>
-  <h1 *ngIf="nodata" class="center">No Data Found</h1>
-  <ion-list *ngFor="let wallet of wallets;">
+  <!-- <h1 *ngIf="nodata" class="center">No Data Found</h1> -->
+  <div >
+    <div class="leader_board">
+      <!-- <div class="leader_board_heading">
+          Leaderboard
+      </div> -->
+      <h1 *ngIf="nodata" class="center">No Data Found</h1>
+      <table class="table"  >
+          <thead>
+              <tr>
+                  <th align="center">#</th>
+                  <th>Question</th>
+                  <th align="center">Title</th>
+                  <th>Amount</th>
+
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let wallet of wallets; let i=index">
+             
+              <td align="center">{{i+1}}</td>
+              <td>{{wallet.questionId.tourId.title}}</td>
+              <td align="center">{{wallet.questionId.question}}</td>
+              <td align="center">{{wallet.amount}}</td>
+
+          </tr>
+                             
+                          </tbody>
+      </table>
+  </div>
+ 
+  </div>
+  <!-- <ion-list *ngFor="let wallet of wallets;">
     <ion-item >
       <ion-avatar slot="start">
         <img src="../../assets/lgn_logo.png">
@@ -27,10 +58,8 @@
       <h5>{{wallet.amount}}</h5>
       </ion-label>
     </ion-item>
-  </ion-list>
-  <ion-list >
+  </ion-list> -->
 
-  </ion-list>
   <!-- <ion-list>
     <ion-item >
       <ion-avatar slot="start">

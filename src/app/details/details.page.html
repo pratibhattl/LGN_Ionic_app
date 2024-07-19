@@ -201,9 +201,9 @@
           <h5>CHOOSE YOUR ANSWER</h5>
     
           <div class="answer">
-            <label  *ngFor="let option of qus.options; let j=index" [ngStyle]="tQustion[i].options[j].userSelectA && {'background': '#d63a41'}">
+            <label  *ngFor="let option of qus.options; let j=index" >
               
-              <input type="radio" name="options" (click)="optionClick(qus,option,i)" value="A"  id="first" 
+              <input type="radio" [checked]="tQustion[i].options[j].userSelectA" name="options" (click)="optionClick(qus,option,i)" value="A"  id="first" 
               [disabled]="tQustion[i].disableFlag" >
               <span  for="first">{{option.text}}</span>
              
@@ -383,12 +383,12 @@
     </div>
    
     </div>
-    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
       <ion-infinite-scroll-content
         loadingSpinner="bubbles"
         loadingText="Loading more data...">
       </ion-infinite-scroll-content>
-    </ion-infinite-scroll>
+    </ion-infinite-scroll> -->
 
   </div>
 </div>
