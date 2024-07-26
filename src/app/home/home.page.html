@@ -45,27 +45,22 @@
     </figure>
         <figcaption>{{tour.title}}</figcaption>
     </ion-col>
-      <!-- <ion-col size="6" (click)="tournamentFirst()">
-        <figure >
-          <img src="../../assets/1706279387_1706103544_5994.jpg">
-        </figure>
-        <figcaption>This is a test tournament 1</figcaption>
-      </ion-col>
-      <ion-col size="6" (click)="tournamentSecond()">
-        <figure routerLink="/details">
-          <img src="../../assets/1706279387_1706103544_5994.jpg">
-        </figure>
-        <figcaption>This is a test tournament 2</figcaption>
-      </ion-col> -->
     </ion-row>
   </ion-grid>
 
-  <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
     <ion-infinite-scroll-content
       loadingSpinner="bubbles"
       loadingText="Loading more data...">
     </ion-infinite-scroll-content>
-  </ion-infinite-scroll> -->
+  </ion-infinite-scroll>
+
+ <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>  -->
 
 <!--  
   <div class="leader_board">

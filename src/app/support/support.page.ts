@@ -28,11 +28,14 @@ export class SupportPage implements OnInit {
     return this.supportForm.controls;
   }
 
-  ngOnInit() {}
- 
+  ngOnInit() {
+  }
+
   async submitData() {
+    
     this.submitted=true;
     if(this.supportForm.valid){
+      this.helper.presentLoading();
       this.apiService.supportUser(this.supportForm.value).subscribe(res => {
         this.helper.dismissLoader();
         console.log("res data", res);
@@ -45,5 +48,9 @@ export class SupportPage implements OnInit {
         }
       });
     }
+  }
+  logout(){
+  	localStorage.removeItem('userData');
+  	this.navCtrl.navigateForward('/login');
   }
 }

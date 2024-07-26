@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AllapiService } from '../services/allapi.service';
+import { HelperService } from '../services/helper.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-notifications',
@@ -50,9 +52,10 @@ export class NotificationsPage implements OnInit {
   notifiEle = false
   notifiTwel = false
 nodata= false
-  constructor(private apiService: AllapiService) { }
+  constructor(private apiService: AllapiService,private _helper : HelperService,private navCtrl: NavController) { }
 
   ngOnInit() {
+    this._helper.presentLoading();
     this.user = JSON.parse(localStorage.getItem("userData")!);
 
     this.apiService.notificationList(this.user?._id).subscribe(res => {
@@ -61,6 +64,7 @@ nodata= false
       // this.user = res;
       // console.log(this.user.status)
       this.notification = res.allNotificationByUserId;
+      this._helper.dismissLoader();
       if(this.notification.length==0){
         this.nodata= true
       }
@@ -138,7 +142,8 @@ nodata= false
     });
   }
   logout(){
-  	this.apiService.logout();
+  	localStorage.removeItem('userData');
+  	this.navCtrl.navigateForward('/login');
   }
 }
 

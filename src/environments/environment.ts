@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: "http://13.232.69.201:8080/api/"
+  // apiUrl: "httpnpx cap sync://13.232.69.201:8080/api/"
 };
 
 /*

@@ -38,6 +38,7 @@ export class RegisterPage implements OnInit {
     if(this.registerForm.valid){
       this.helper.presentLoading();
       this.apiService.registerUser(this.registerForm.value).subscribe(res => {
+        console.log(res);
         this.helper.dismissLoader();
         if(res.status=='1'){
           this.helper.showError(res.message)

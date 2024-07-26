@@ -18,6 +18,8 @@ export class HomePage implements OnInit {
   tournaments:any
   data: any[] = [];
   items: any[] = [];
+  itemsPerPage = 1; // Number of items to display per page
+  currentPage = 1;
   
   constructor(public modalController: ModalController,private apiService : AllapiService,
     private navCtrl : NavController, private _helper : HelperService) {}
@@ -46,7 +48,8 @@ export class HomePage implements OnInit {
     this.apiService.tournamentUpcoming().subscribe(res => {
       console.log(res)
       this.tournaments= res.tournaments ;
-      this.loadInitialData();
+      // this.loadInitialData();
+      this.loadInitialItems()
       console.log(this.tournaments);
       if(res.status==true){ 
         this.tournaments  = res.tournaments;
@@ -76,26 +79,47 @@ export class HomePage implements OnInit {
     });
     return await modal.present();
   }
-
-  loadInitialData() {
-    for (let i = 0; i <=5; i++) {
-      this.items.push(this.tournaments[i]);
-    }
-    console.log(this.tournaments)
-    // Simulate data from server
-    for (let i = 6; i <= 100; i++) {
-      this.data.push(this.tournaments[i]);
-    }
+  loadInitialItems() {
+    this.items = this.items.slice(0, this.itemsPerPage * this.currentPage);
   }
 
-  // loadData(event) {
+  loadMore(event:any) {
+    console.log(event)
+    setTimeout(() => {
+      this.currentPage++;
+      const newItems = this.items.slice(0, this.itemsPerPage * this.currentPage);
+      this.items = newItems;
+
+      event.target.complete();
+
+      // Disable infinite scroll if all data is loaded
+      if (this.items.length >= this.items.length) {
+        event.target.disabled = true;
+      }
+    }, 500); // Simulate a delay for loading more items
+  }
+
+
+
+  // loadInitialData() {
+  //   for (let i = 0; i <1; i++) {
+  //     this.items.push(this.tournaments[i]);
+  //   }
+  //   console.log(this.tournaments)
+  //   // Simulate data from server
+  //   for (let i = 1; i <= 100; i++) {
+  //     this.data.push(this.tournaments[i]);
+  //   }
+  // }
+
+  // loadData(event:any) {
   //   setTimeout(() => {
   //     if (this.data.length === 0) {
   //       event.target.disabled = true;
   //       return;
   //     }
 
-  //     const newItems = this.data.splice(0, 5);
+  //     const newItems = this.data.splice(0, 1);
   //     this.items.push(...newItems);
   //     event.target.complete();
   //   }, 500);
