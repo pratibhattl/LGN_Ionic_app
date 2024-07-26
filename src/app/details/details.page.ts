@@ -75,9 +75,12 @@ export class DetailsPage implements OnInit {
 
   ngOnInit() {
     this.loginUser = JSON.parse(localStorage.getItem('userData')!);
-    this.fetchMessages();
     this.tournaments = JSON.parse(localStorage.getItem('tourDetails')!);
     let id = this.tournaments._id;
+    this.tourId = this.tournaments._id;
+    console.log("Component initialized with tourId:", this.tourId);
+    this.fetchMessages();
+
 
     //pusher
     this.tourId = id;
@@ -232,12 +235,25 @@ export class DetailsPage implements OnInit {
   //   });
   // }
   fetchMessages() {
+    console.log("Fetching messages for tournamentId:", this.tourId);
+
     this.firestore
-      .collection<Message>('messages', (ref) => ref.orderBy('timestamp'))
+      .collection<Message>('messages', (ref) =>
+        ref.where('tournamentId', '==', this.tourId).orderBy('timestamp')
+      )
       .valueChanges()
-      .subscribe((data) => {
-        this.messageList = data;
-      });
+      .subscribe(
+        (data) => {
+          console.log("Fetched messages:", data);
+          if (data.length === 0) {
+            console.warn("No messages found for tournamentId:", this.tourId);
+          }
+          this.messageList = data;
+        },
+        (error) => {
+          console.error("Error fetching messages:", error);
+        }
+      );
   }
   submitChat() {
     if (this.message == '') {
