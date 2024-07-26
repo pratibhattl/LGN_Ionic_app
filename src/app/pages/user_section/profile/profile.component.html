@@ -1,0 +1,62 @@
+<h4 class="heading">Profile</h4>
+<!-- <form>
+    <div class="field-wrap">
+        <label>Name</label>
+        <input type="text" class="name textbox" placeholder="">
+    </div>
+    <div class="field-wrap">
+        <label>Email</label>
+        <input type="text" class="mail textbox" placeholder="">
+    </div>
+    <div class="field-wrap">
+        <label>Contact No</label>
+        <input type="tel" class="phone textbox" placeholder="">
+    </div>
+    <div class="field-wrap">
+        <input type="submit" class="main-btn" value="Update Profile">
+    </div>
+</form> -->
+
+<div class="profile-wrap">
+    <ng-container *ngIf="userDetails?.profile_img=='';else elimage">
+        <figure class="profile_image">
+          <img src="./assets/user.png">
+        </figure>
+    </ng-container>
+    <ng-template #elimage>
+        <figure class="profile_image">
+            <img src="{{userDetails?.profile_img}}">
+        </figure>
+    </ng-template>
+
+    <div class="field-wrap">
+        <h2 class="label-txt">Name</h2>
+        <p class="profile-cnt">{{userDetails?.name}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="label-txt">Email</h2>
+        <p class="profile-cnt">{{userDetails?.email}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="label-txt">Phone</h2>
+        <p class="profile-cnt">{{userDetails?.phone}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="label-txt">Address : </h2>
+        <p class="profile-cnt">{{userDetails?.address?.location}}, {{userDetails?.address?.city}} {{userDetails?.address?.pin}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="label-txt">Points</h2>
+        <p class="profile-cnt">{{userDetails?.points}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="label-txt">Wallet Points</h2>
+        <p class="profile-cnt">{{userDetails?.walletPoints}}</p>
+    </div>
+    <a routerLink="/user/profile/{{userDetails?._id}}" class="main-btn">Edit Profile</a>
+</div>

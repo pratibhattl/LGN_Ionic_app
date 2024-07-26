@@ -20,12 +20,12 @@
           Leaderboard
       </div> -->
       <h1 *ngIf="nodata" class="center">No Data Found</h1>
-      <table class="table"  >
+      <table class="table" *ngIf="!nodata" >
           <thead>
               <tr>
                   <th align="center">#</th>
-                  <th>Question</th>
-                  <th align="center">Title</th>
+                  <th>Tournament</th>
+                  <th align="center">Question</th>
                   <th>Amount</th>
 
               </tr>

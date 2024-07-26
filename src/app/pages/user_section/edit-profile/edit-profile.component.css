@@ -1,0 +1,28 @@
+.field-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    gap: 6px;
+}
+.textbox {
+    padding: 16px;
+    padding-left: 60px;
+    border:none;
+}
+.main-btn {
+    border: none;
+}
+
+.profile_image {
+    width: 161px;
+    height: 161px;
+    display: block;
+    margin: 0 auto;
+}
+.profile_image img {
+    width: 161px;
+    height: 161px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}

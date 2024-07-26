@@ -1,0 +1,390 @@
+
+<section class="banner-area">
+    <div class="main-container">
+        <div class="banner-cnt">
+            <div class="left-wrap">
+                <h2>Travelling
+                    made easier!</h2>
+                <p>Offering unparalleled convenience and
+                    comfortability in reaching desired destinations.</p>
+                <a href="#" class="main-btn">Know More Us</a>
+                <form action="/book_cab">
+                    <div class="banner-form-wrap">
+                        <div class="field-wrap">
+                            <input type="text" class="location" placeholder="Pickup Location" [(ngModel)]="pickUpLocation" name="pickUpLocation">
+                        </div>
+                        <div class="field-wrap">
+                            <input type="text" class="location" placeholder="Drop Location" [(ngModel)]="dropLocation" name="dropLocation">
+                        </div>
+                        <div class="field-wrap">
+                            <input type="date" class="calendar" placeholder="Date" [min]="todayDate" [(ngModel)]="date"  name="date">
+                            <input type="time" class="calendar" placeholder="Time" [(ngModel)]="time" name="time">
+                        </div>
+                        <input type="submit" class="main-btn" value="Get a Quote" (click)="getRecomendedCars()">
+                    </div>
+                </form>
+            </div>
+            <div class="right-wrap">
+                <figure>
+                    <img src="../../../assets/images/banner-car.png" alt="">
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stand-area">
+    <div class="main-container">
+        <div class="stand-cnt">
+            <h2>How do we stand out from others</h2>
+            <div class="card-wrap">
+                <div class="card">
+                    <img src="../../../assets/images/card1.svg" alt="">
+                    <h3>Free Baby Seat</h3>
+                </div>
+                <div class="card">
+                    <img src="../../../assets/images/card2.svg" alt="">
+                    <h3>Flight Monitoring</h3>
+                </div>
+                <div class="card">
+                    <img src="../../../assets/images/card3.svg" alt="">
+                    <h3>Transparent Pricing</h3>
+                </div>
+                <div class="card">
+                    <img src="../../../assets/images/card4.svg" alt="">
+                    <h3>Customer Support 24/7</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="service-area">
+    <div class="main-container">
+        <div class="service-cnt">
+            <div class="left-wrap">
+                <figure>
+                    <img src="../../../assets/images/exp-car.png" alt="">
+                </figure>
+            </div>
+            <div class="right-wrap">
+                <p>Best Services</p>
+                <h3>Feel the best experience
+                    with our cabs</h3>
+                <div class="serv-cnt">
+                    <div class="services">
+                        <div class="left-cnt">
+                            <img src="../../../assets/images/s1.svg" alt="">
+                        </div>
+                        <div class="right-wrap">
+                            <h2>Choose Location</h2>
+                            <p>See 3 popular hotels at a heavily
+                                discount price</p>
+                        </div>
+                    </div>
+                    <div class="services">
+                        <div class="left-cnt">
+                            <img src="../../../assets/images/s2.svg" alt="">
+                        </div>
+                        <div class="right-wrap">
+                            <h2>Pick-up date</h2>
+                            <p>Click choose and we’ll pick one of the 3 hotels.</p>
+                        </div>
+                    </div>
+                    <div class="services">
+                        <div class="left-cnt">
+                            <img src="../../../assets/images/s3.svg" alt="">
+                        </div>
+                        <div class="right-wrap">
+                            <h2>Book your car</h2>
+                            <p>See which hotel right after you book!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="class-rates-wrap">
+    <div class="main-container">
+        <div class="head-text">
+            <h2>Car classes and rates</h2>
+        </div>
+        <div class="slider-wrap">
+            <div class="swiper carswiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <h2>Saloon Car</h2>
+                        <ul>
+                            <li><img src="../../../assets/images/i1.png" alt="">Toyota Prius</li>
+                            <li><img src="../../../assets/images/i2.png" alt="">4 Seats</li>
+                            <li><img src="../../../assets/images/i3.png" alt="">23kg max</li>
+                            <li><img src="../../../assets/images/i4.png" alt="">$20,000</li>
+                        </ul>
+                        <div class="action-area">
+                            <img src="../../../assets/images/s-btn.png" alt="">
+                            <figure>
+                                <img src="../../../assets/images/s-car1.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>Saloon Car</h2>
+                        <ul>
+                            <li><img src="../../../assets/images/i1.png" alt="">Toyota Prius</li>
+                            <li><img src="../../../assets/images/i2.png" alt="">4 Seats</li>
+                            <li><img src="../../../assets/images/i3.png" alt="">23kg max</li>
+                            <li><img src="../../../assets/images/i4.png" alt="">$20,000</li>
+                        </ul>
+                        <div class="action-area">
+                            <img src="../../../assets/images/s-btn.png" alt="">
+                            <figure>
+                                <img src="../../../assets/images/s-car2.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>Saloon Car</h2>
+                        <ul>
+                            <li><img src="../../../assets/images/i1.png" alt="">Toyota Prius</li>
+                            <li><img src="../../../assets/images/i2.png" alt="">4 Seats</li>
+                            <li><img src="../../../assets/images/i3.png" alt="">23kg max</li>
+                            <li><img src="../../../assets/images/i4.png" alt="">$20,000</li>
+                        </ul>
+                        <div class="action-area">
+                            <img src="../../../assets/images/s-btn.png" alt="">
+                            <figure>
+                                <img src="../../../assets/images/s-car1.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>Saloon Car</h2>
+                        <ul>
+                            <li><img src="../../../assets/images/i1.png" alt="">Toyota Prius</li>
+                            <li><img src="../../../assets/images/i2.png" alt="">4 Seats</li>
+                            <li><img src="../../../assets/images/i3.png" alt="">23kg max</li>
+                            <li><img src="../../../assets/images/i4.png" alt="">$20,000</li>
+                        </ul>
+                        <div class="action-area">
+                            <img src="../../../assets/images/s-btn.png" alt="">
+                            <figure>
+                                <img src="../../../assets/images/s-car1.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="why-choose-us">
+                <div class="left-wrap">
+                    <div class="row">
+                        <div class="card">
+                            <img src="../../../assets/images/audiance.svg" alt="">
+                            <h3>Convenience</h3>
+                            <p>Bookings can be made online, easily and effectively. Customers can book their desired
+                                cars in advance to have a stress-free travel experience.</p>
+                        </div>
+                        <div class="card">
+                            <img src="../../../assets/images/affordability.svg" alt="">
+                            <h3>Affordability</h3>
+                            <p>Bookings can be made online, easily and effectively. Customers can book their desired
+                                cars in advance to have a stress-free travel experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="card">
+                            <img src="../../../assets/images/safety.png" alt="">
+                            <h3>Safety</h3>
+                            <p>Bookings can be made online, easily and effectively. Customers can book their desired
+                                cars in advance to have a stress-free travel experience.</p>
+                        </div>
+                        <div class="card">
+                            <img src="../../../assets/images/business.svg" alt="">
+                            <h3>Business</h3>
+                            <p>Bookings can be made online, easily and effectively. Customers can book their desired
+                                cars in advance to have a stress-free travel experience.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right-wrap">
+                    <h2 class="after">Why Choose Us</h2>
+                    <p>Britain Airport Transfers has emerged as a safe, secure, comfortable and abotve all a
+                        cost-efficient source of airport minicab and Airport Transfers. </p>
+                    <p>Not only does it provide exceptional services, but it also does that at a very low price as
+                        compared to other minicab services. It is a luxury at an affordable price.</p>
+                    <a href="#" class="main-btn">Know More Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="rates-wrap">
+    <div class="main-container">
+        <div class="head-text">
+            <h2>Flexible Taxi Rates.</h2>
+        </div>
+        <div class="rates-cnt">
+            <div class="card">
+                <span>Standard</span>
+                <h3>Minicab From Heathrow Airport To Luton Airport</h3>
+                <div class="allowance-wrap">
+                    <div class="allowance-cnt">
+                        <h2>Initial Charge</h2>
+                        <p>$3.50</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Dist. Allowance</h2>
+                        <p>700 m</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Time Allowance</h2>
+                        <p>120 sec</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Up to 15 kms</h2>
+                        <p>$1.45/km</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Booking Fee</h2>
+                        <p>$0.62/min</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Extra Passangers</h2>
+                        <p>$1.40/km</p>
+                    </div>
+
+                </div>
+                <a href="#" class="black-btn">Booking Now</a>
+            </div>
+            <div class="card active">
+                <span>Standard</span>
+                <h3>Minicab From Heathrow Airport To Luton Airport</h3>
+                <div class="allowance-wrap">
+                    <div class="allowance-cnt">
+                        <h2>Initial Charge</h2>
+                        <p>$3.50</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Dist. Allowance</h2>
+                        <p>700 m</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Time Allowance</h2>
+                        <p>120 sec</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Up to 15 kms</h2>
+                        <p>$1.45/km</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Booking Fee</h2>
+                        <p>$0.62/min</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Extra Passangers</h2>
+                        <p>$1.40/km</p>
+                    </div>
+
+                </div>
+                <a href="#" class="black-btn">Booking Now</a>
+            </div>
+            <div class="card">
+                <span>Standard</span>
+                <h3>Minicab From Heathrow Airport To Luton Airport</h3>
+                <div class="allowance-wrap">
+                    <div class="allowance-cnt">
+                        <h2>Initial Charge</h2>
+                        <p>$3.50</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Dist. Allowance</h2>
+                        <p>700 m</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Time Allowance</h2>
+                        <p>120 sec</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Up to 15 kms</h2>
+                        <p>$1.45/km</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Booking Fee</h2>
+                        <p>$0.62/min</p>
+                    </div>
+                    <div class="allowance-cnt">
+                        <h2>Extra Passangers</h2>
+                        <p>$1.40/km</p>
+                    </div>
+
+                </div>
+                <a href="#" class="black-btn">Booking Now</a>
+            </div>
+
+        </div>
+        <p class="more-price">We have many pricing for you, <a href="#">See More Pricing</a></p>
+    </div>
+</section>
+
+<section class="best-offer-area">
+    <div class="main-container">
+        <div class="head-text">
+            <h2>We Offer The Best For You.</h2>
+        </div>
+
+        <div class="card-wrap">
+            <div class="black-card">
+                <div class="card-head">
+                    <img src="../../../assets/images/support.png" alt="">
+                    <h2>Support All Payment</h2>
+                </div>
+                <div class="card-body">
+                    <img src="../../../assets/images/payment.png" alt="">
+                </div>
+            </div>
+            <div class="green-card">
+                <div class="card-head">
+                    <img src="../../../assets/images/safe.png" alt="">
+                    <h2>Safety First</h2>
+                </div>
+                <ul>
+                    <li><img src="../../../assets/images/guarantee.png" alt="">Guarantee</li>
+                    <li><img src="../../../assets/images/ride.png" alt="">Quick Ride</li>
+                </ul>
+            </div>
+
+            <div class="white-card">
+                <div class="card-head">
+                    <img src="../../../assets/images/digital.png" alt="">
+                    <h2>Safety First</h2>
+                </div>
+                <ul>
+                    <li><img src="../../../assets/images/secure-pay.png" alt="">Secure Payment</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonial-area">
+    <div class="main-container">
+        <div class="tesimonial-cnt">
+            <div class="left-wrap">
+                <img src="../../../assets/images/quote.png" alt="">
+                <p>“The journey from any airport to the downtown of the city are metered. Taximeter fare system for
+                    the use of distance from the your airport and inside the area of the town.”</p>
+                <div class="detail-wrap">
+                    <h2>Ted Mckinney</h2>
+                    <p>Executive Director</p>
+                </div>
+            </div>
+            <div class="right-wrap">
+                <figure><img src="../../../assets/images/test-car.png" alt=""></figure>
+            </div>
+        </div>
+    </div>
+</section>

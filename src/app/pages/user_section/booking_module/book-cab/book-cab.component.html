@@ -1,0 +1,269 @@
+
+<section class="car-booking-area">
+    <div class="main-container">
+        <div class="book-area">
+            <div class="left-wrap">
+                <h2>Book Your Cab</h2>
+                <form [formGroup]="cabForm">
+                    <div class="book-form-wrap">
+                        <select name="" id="" class="textbox np" formControlName="car" [ngClass]="{'is-invalid' : submitted && f['car'].errors}">
+                            <option [value]="cab._id" *ngFor="let cab of cabList">{{cab.name}}</option>
+                        </select>
+                        <div *ngIf="submitted && f['car'].errors">
+                            <span *ngIf="f['car'].errors['required']">Please select a car</span>
+                        </div>
+
+                        <div class="field-wrap">
+                            <input type="date" placeholder="Travel Date" [min]="todayDate" class="date textbox" formControlName="travelDate" [ngClass]="{'is-invalid' : submitted && f['travelDate'].errors}">
+                            <input type="time" placeholder="Pickup Time" min="19:00"  class="pickup textbox" formControlName="pickupTime" [ngClass]="{'is-invalid' : submitted && f['pickupTime'].errors}">
+                        </div>
+                        <div class="field-wrap" *ngIf="submitted">
+                            <div *ngIf="f['travelDate'].errors">
+                                <span *ngIf="f['travelDate'].errors['required']">Please choose your travel date</span>
+                            </div>
+    
+                            <div *ngIf="f['pickupTime'].errors">
+                                <span *ngIf="f['pickupTime'].errors['required']">Please choose your travel time</span>
+                            </div>
+                        </div>
+                       
+
+                        <div class="field-wrap">
+                            <input type="text" name="" id="" placeholder="Pickup Location" class="plocation textbox" formControlName="pickupLocation" [ngClass]="{'is-invalid' : submitted && f['pickupLocation'].errors}">
+                            <img src="../../../assets/images/location-icon.svg" alt="" class="l-icon">
+                        </div>
+                        <div *ngIf="submitted && f['pickupLocation'].errors">
+                            <span *ngIf="f['pickupLocation'].errors['required']">Please enter your pick uplocation</span>
+                        </div>
+
+                        <div class="field-wrap">
+                            <input type="text" name="" id="" placeholder="Drop Location" class="plocation textbox" formControlName="primaryDropLocation" [ngClass]="{'is-invalid' : submitted && f['primaryDropLocation'].errors}">
+                            <img src="../../../assets/images/location-icon.svg" alt="" class="l-icon">
+                        </div>
+                        <div *ngIf="submitted && f['primaryDropLocation'].errors">
+                            <span *ngIf="f['primaryDropLocation'].errors['required']">Please enter your drop location</span>
+                        </div>
+
+                        <div class="field-wrap">
+                            <input type="number" name="" id="" placeholder="Luggage" class="plocation textbox" formControlName="luggage" [ngClass]="{'is-invalid' : submitted && f['luggage'].errors}">
+                        </div>
+                        <div *ngIf="submitted && f['luggage'].errors">
+                            <span *ngIf="f['luggage'].errors['required']">Please enter your weight of luggage</span>
+                        </div>
+
+                        <ng-container formArrayName="dropLocation">
+                            <div  *ngFor="let drop of itemControls.controls; let i=index" >
+                                <div class="field-wrap" [formGroupName]="i">
+                                    <input type="text" name="" id="" placeholder="Passenger" class="plocation textbox mw-68" formControlName="passenger" [ngClass]="{'is-invalid' : submitted && f['dropLocation'].errors}">
+                                    <input type="text" name="" id="" placeholder="Drop Location" class="plocation textbox mw-68" formControlName="location">
+                                    <button class="add-remove"  *ngIf="i==0"><img src="../../../assets/images/add.svg" (click)="addDropLocation()"></button>
+                                    <button class="add-remove" *ngIf="i!==0"><img src="../../../assets/images/remove.svg" alt="" (click)="removeLocation(i)" ></button>
+                                </div>
+                            </div>
+
+                            <div class="field-wrap" *ngIf="submitted">
+                                <div *ngIf="f['dropLocation'].errors">
+                                    <span *ngIf="f['dropLocation'].errors['required']">Please enter passenger name</span>
+                                </div>
+        
+                                <!-- <div *ngIf="itemControls['location'].errors">
+                                    <span *ngIf="itemControls['location'].errors['required']">Please enter drop location</span>
+                                </div> -->
+                            </div>
+                        </ng-container>
+                        <input type="submit" value="Get Estimate" class="black-btn"  (click)="cabFormSubmit()">
+                    </div>
+                </form>
+            </div>
+            <div class="right-wrapper" *ngIf="bookingData">
+                <div class="right-wrap">
+                    <h2>Summary</h2>
+                    <div class="rate-wrap">
+                        <div class="left-cnt">
+                            <div class="img-wrap">
+                                <img src="../../../assets/images/car.svg" alt="">
+                            </div>
+                            <div class="rate-cnt">
+                                <h3>Business Class</h3>
+                                <p>{{ bookingData?.carDetails?.name }}</p>
+                            </div>
+                        </div>
+                        <div class="right-cnt">
+                            <p>${{bookingData?.carDetails?.price}}</p>
+                        </div>
+                    </div>
+                    <div class="rate-wrap">
+                        <div class="left-wrapper">
+                            <div class="left-cnt">
+                                <div class="img-wrap">
+                                    <img src="../../../assets/images/calendar.svg" alt="">
+                                </div>
+                                <div class="rate-cnt">
+                                    <h3>Travel Date</h3>
+                                    <!-- <p>Friday - 10th July, 2024 {{ bookingData?travelDate | fullDate}}</p> -->
+                                    <!-- <p>{{ bookingData?.travelDate | date : 'EEEE - MMMM d, y'}}</p> -->
+                                    <p>{{ moment(bookingData?.travelDate).format('dddd - Do MMM, yyyy')}}</p>
+                                </div>
+                            </div>
+                            <div class="left-cnt">
+                                <div class="img-wrap">
+                                    <img src="../../../assets/images/bclock.svg" alt="">
+                                </div>
+                                <div class="rate-cnt">
+                                    <h3>Pickup Time</h3>
+                                    <p>{{ bookingData?.pickupTime }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rate-wrap">
+                        <div class="left-cnt">
+                            <div class="img-wrap">
+                                <img src="../../../assets/images/location.svg" alt="">
+                            </div>
+                            <div class="rate-cnt">
+                                <h3>Pickup Location</h3>
+                                <p>{{ bookingData?.pickupLocation }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rate-wrap">
+                        <div class="left-cnt">
+                            <div class="img-wrap">
+                                <img src="../../../assets/images/location.svg" alt="">
+                            </div>
+                            <div class="rate-cnt">
+                                <h3>Drop Location</h3>
+                                <p>{{ bookingData?.primaryDropLocation }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rate-wrap">
+                        <div class="left-cnt">
+                            <div class="img-wrap">
+                                <img src="../../../assets/images/location.svg" alt="">
+                            </div>
+                            <div class="rate-cnt">
+                                <h3>Distance Fare</h3>
+                                <p>${{ bookingData?.distanceCost }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rate-wrap" *ngIf="bookingData?.extraPassengers>0">
+                        <div class="left-cnt">
+                            <div class="img-wrap">
+                                <img src="../../../assets/images/location.svg" alt="">
+                            </div>
+                            <div class="rate-cnt">
+                                <h3>Extra Passengers</h3>
+                                <p>{{ bookingData?.extraPassengers }}</p>
+                            </div>
+                        </div>
+                        <div class="right-cnt">
+                            <p class="green-text">+${{ bookingData?.extra_passenger_cost }}</p>
+                        </div>
+                    </div>
+
+                    <div class="rate-wrap" *ngIf="bookingData?.extraPassengers>0">
+                        <div class="left-cnt">
+                            <div class="img-wrap">
+                                <img src="../../../assets/images/location.svg" alt="">
+                            </div>
+                            <div class="rate-cnt">
+                                <h3>Drop Location</h3>
+                                <p>{{ bookingData?.dropLocation }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="estimation" (click)="finalSubmit()">
+                    <h2>Total Estimation -</h2>
+                    <h2>${{bookingData?.totalCose}}</h2>
+                </div>
+                <div class="car-area">
+                    <figure>
+                        <img [src]="bookingData?.carDetails?.image" alt="">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="view-product-wrap">
+    <div class="main-container">
+        <div class="head-text">
+            <h2>You can also view the below options</h2>
+        </div>
+        <div class="slider-wrap">
+            <div class="swiper carswiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <h2>Saloon Car</h2>
+                        <ul>
+                            <li><img src="../../../assets/images/i1.png" alt="">Toyota Prius</li>
+                            <li><img src="../../../assets/images/i2.png" alt="">4 Seats</li>
+                            <li><img src="../../../assets/images/i3.png" alt="">23kg max</li>
+                            <li><img src="../../../assets/images/i4.png" alt="">$20,000</li>
+                        </ul>
+                        <div class="action-area">
+                            <img src="../../../assets/images/s-btn.png" alt="">
+                            <figure>
+                                <img src="../../../assets/images/s-car1.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>Saloon Car</h2>
+                        <ul>
+                            <li><img src="../../../assets/images/i1.png" alt="">Toyota Prius</li>
+                            <li><img src="../../../assets/images/i2.png" alt="">4 Seats</li>
+                            <li><img src="../../../assets/images/i3.png" alt="">23kg max</li>
+                            <li><img src="../../../assets/images/i4.png" alt="">$20,000</li>
+                        </ul>
+                        <div class="action-area">
+                            <img src="../../../assets/images/s-btn.png" alt="">
+                            <figure>
+                                <img src="../../../assets/images/s-car2.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>Saloon Car</h2>
+                        <ul>
+                            <li><img src="../../../assets/images/i1.png" alt="">Toyota Prius</li>
+                            <li><img src="../../../assets/images/i2.png" alt="">4 Seats</li>
+                            <li><img src="../../../assets/images/i3.png" alt="">23kg max</li>
+                            <li><img src="../../../assets/images/i4.png" alt="">$20,000</li>
+                        </ul>
+                        <div class="action-area">
+                            <img src="../../../assets/images/s-btn.png" alt="">
+                            <figure>
+                                <img src="../../../assets/images/s-car1.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>Saloon Car</h2>
+                        <ul>
+                            <li><img src="../../../assets/images/i1.png" alt="">Toyota Prius</li>
+                            <li><img src="../../../assets/images/i2.png" alt="">4 Seats</li>
+                            <li><img src="../../../assets/images/i3.png" alt="">23kg max</li>
+                            <li><img src="../../../assets/images/i4.png" alt="">$20,000</li>
+                        </ul>
+                        <div class="action-area">
+                            <img src="../../../assets/images/s-btn.png" alt="">
+                            <figure>
+                                <img src="../../../assets/images/s-car1.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->

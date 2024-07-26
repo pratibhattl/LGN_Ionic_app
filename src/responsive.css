@@ -1,0 +1,969 @@
+@media screen and (max-width:767px) {
+
+    .banner-form-wrap .main-btn {
+        padding: 10px;
+    }
+
+    .main-container {
+        padding: 0 16px;
+        max-width: 100%;
+    }
+
+    .banner-cnt .left-wrap h2 {
+        font-size: 35px;
+        line-height: 41px;
+    }
+
+    .stand-cnt h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .stand-cnt .card-wrap .card:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .stand-cnt .card-wrap .card:nth-child(4) {
+        margin-top: 0;
+    }
+
+    .service-cnt {
+        flex-direction: column;
+    }
+
+    .service-cnt .left-wrap {
+        width: 100%;
+    }
+
+    .service-cnt .left-wrap figure {
+        margin-left: calc(-96vw + 100%);
+        height: auto;
+    }
+
+    .service-cnt .left-wrap figure img {
+        height: auto;
+        width: 100%;
+    }
+
+    .service-cnt .right-wrap {
+        width: 100%;
+    }
+
+    .service-cnt .right-wrap h3 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .head-text h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .why-choose-us {
+        flex-direction: column;
+    }
+
+    .why-choose-us .right-wrap h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .rates-cnt {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 75px;
+        padding: 40px 0;
+    }
+
+    .testimonial-area .tesimonial-cnt {
+        flex-direction: column;
+    }
+
+    .testimonial-area .tesimonial-cnt .left-wrap {
+        width: 100%;
+    }
+
+    .testimonial-area .tesimonial-cnt .right-wrap figure {
+        width: 100%;
+        margin-left: calc(-87vw + 100%);
+    }
+
+    .book-car h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .why-choose-us .left-wrap {
+        justify-content: center;
+    }
+
+    .banner-cnt {
+        padding: 90px 0 0;
+        flex-direction: column;
+    }
+
+    .stand-cnt {
+        padding: 40px 0;
+        gap: 40px;
+    }
+
+    .class-rates-wrap {
+        padding: 40px 0;
+    }
+
+    .slider-wrap .swiper {
+        padding: 40px 0 40px 0;
+    }
+
+    .best-offer-area {
+        padding: 40px 0;
+    }
+
+    .more-price {
+        margin-top: 40px;
+    }
+
+    .best-offer-area .card-wrap {
+        margin-top: 40px;
+    }
+
+    .testimonial-area {
+        padding: 40px 0;
+    }
+
+    .book-car .call-wrap p {
+        font-size: 25px;
+    }
+
+    .book-car .call-wrap {
+        gap: 20px;
+    }
+
+    footer .card-wrap .card-cnt h2 {
+        margin-bottom: 20px;
+    }
+
+    footer .card-wrap {
+        gap: 20px;
+    }
+
+    .why-choose-us .left-wrap .row:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .banner-form-wrap .field-wrap {
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 819px) {
+
+    .banner-form-wrap .main-btn {
+        padding: 10px;
+    }
+
+    .service-cnt .right-wrap .serv-cnt .services {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .service-cnt .right-wrap .serv-cnt {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .main-container {
+        padding: 0 16px;
+        max-width: 100%;
+    }
+
+    .banner-cnt .left-wrap h2 {
+        font-size: 35px;
+        line-height: 41px;
+    }
+
+    .stand-cnt h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .stand-cnt .card-wrap .card:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .stand-cnt .card-wrap .card:nth-child(4) {
+        margin-top: 0;
+    }
+
+    .service-cnt {
+        flex-direction: column;
+    }
+
+    .service-cnt .left-wrap {
+        width: 100%;
+    }
+
+    .service-cnt .left-wrap figure {
+        margin-left: calc(-96vw + 100%);
+        height: auto;
+    }
+
+    .service-cnt .left-wrap figure img {
+        height: auto;
+        width: 100%;
+    }
+
+    .service-cnt .right-wrap {
+        width: 100%;
+    }
+
+    .service-cnt .right-wrap h3 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .head-text h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .why-choose-us {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why-choose-us .right-wrap h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .rates-cnt {
+        flex-wrap: wrap;
+        gap: 75px;
+        padding: 40px 0;
+    }
+
+    .testimonial-area .tesimonial-cnt {
+        flex-direction: column;
+    }
+
+    .testimonial-area .tesimonial-cnt .left-wrap {
+        width: 100%;
+    }
+
+    .testimonial-area .tesimonial-cnt .right-wrap figure {
+        width: 100%;
+        margin-left: calc(-42vw + 100%);
+    }
+
+    .book-car h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .rates-cnt .card .black-btn {
+        max-width: 260px;
+    }
+
+    .why-choose-us .left-wrap {
+        justify-content: center;
+    }
+
+    .banner-cnt {
+        padding: 90px 0 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stand-cnt {
+        padding: 40px 0;
+        gap: 40px;
+    }
+
+    .class-rates-wrap {
+        padding: 40px 0;
+    }
+
+    .slider-wrap .swiper {
+        padding: 40px 0 40px 0;
+    }
+
+    .best-offer-area {
+        padding: 40px 0;
+    }
+
+    .more-price {
+        margin-top: 40px;
+    }
+
+    .best-offer-area .card-wrap {
+        margin-top: 40px;
+    }
+
+    .testimonial-area {
+        padding: 40px 0;
+    }
+
+    .book-car .call-wrap p {
+        font-size: 25px;
+    }
+
+    .book-car .call-wrap {
+        gap: 20px;
+    }
+
+    footer .card-wrap .card-cnt h2 {
+        margin-bottom: 20px;
+    }
+
+    footer .card-wrap {
+        gap: 20px;
+    }
+
+    .why-choose-us .left-wrap .row:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .banner-form-wrap .field-wrap {
+        flex-wrap: wrap;
+    }
+
+    .rates-cnt .card {
+        max-width: 330px;
+    }
+
+    .rates-cnt {
+        flex-wrap: wrap;
+        gap: 60px 50px;
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    .best-offer-area .card-wrap {
+        justify-content: center;
+    }
+
+    footer .card-wrap {
+        justify-content: left;
+    }
+
+    .banner-cnt .right-wrap figure {
+        width: 100%;
+    }
+
+    .banner-cnt .right-wrap figure img {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 820px) and (max-width: 1000px) {
+
+    .banner-form-wrap .main-btn {
+        padding: 10px;
+    }
+
+    .nav-wrap ul li a {
+        font-size: 16px;
+    }
+
+    .banner-cnt .right-wrap figure {
+        width: 100%;
+    }
+
+    .banner-cnt .right-wrap figure img {
+        width: 100%;
+    }
+
+    .service-cnt .right-wrap .serv-cnt .services {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .service-cnt .right-wrap .serv-cnt {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .main-container {
+        padding: 0 16px;
+        max-width: 100%;
+    }
+
+    .banner-cnt .left-wrap h2 {
+        font-size: 35px;
+        line-height: 41px;
+    }
+
+    .stand-cnt h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .stand-cnt .card-wrap .card:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .stand-cnt .card-wrap .card:nth-child(4) {
+        margin-top: 0;
+    }
+
+    .service-cnt {
+        flex-direction: column;
+    }
+
+    .service-cnt .left-wrap {
+        width: 100%;
+    }
+
+    .service-cnt .left-wrap figure {
+        margin-left: calc(-96vw + 100%);
+        height: auto;
+    }
+
+    .service-cnt .left-wrap figure img {
+        height: auto;
+        width: 100%;
+    }
+
+    .service-cnt .right-wrap {
+        width: 100%;
+    }
+
+    .service-cnt .right-wrap h3 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .head-text h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .why-choose-us {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why-choose-us .right-wrap h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .rates-cnt {
+        flex-wrap: wrap;
+        gap: 75px;
+        padding: 40px 0;
+    }
+
+    .testimonial-area .tesimonial-cnt {
+        flex-direction: column;
+    }
+
+    .testimonial-area .tesimonial-cnt .left-wrap {
+        width: 100%;
+    }
+
+    .testimonial-area .tesimonial-cnt .right-wrap figure {
+        width: 100%;
+        margin-left: calc(-39vw + 100%);
+    }
+
+    .book-car h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .rates-cnt .card .black-btn {
+        max-width: 260px;
+    }
+
+    .why-choose-us .left-wrap {
+        justify-content: center;
+    }
+
+    .banner-cnt {
+        padding: 90px 0 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stand-cnt {
+        padding: 40px 0;
+        gap: 40px;
+    }
+
+    .class-rates-wrap {
+        padding: 40px 0;
+    }
+
+    .slider-wrap .swiper {
+        padding: 40px 0 40px 0;
+    }
+
+    .best-offer-area {
+        padding: 40px 0;
+    }
+
+    .more-price {
+        margin-top: 40px;
+    }
+
+    .best-offer-area .card-wrap {
+        margin-top: 40px;
+    }
+
+    .testimonial-area {
+        padding: 40px 0;
+    }
+
+    .book-car .call-wrap p {
+        font-size: 25px;
+    }
+
+    .book-car .call-wrap {
+        gap: 20px;
+    }
+
+    footer .card-wrap .card-cnt h2 {
+        margin-bottom: 20px;
+    }
+
+    footer .card-wrap {
+        gap: 20px;
+    }
+
+    .why-choose-us .left-wrap .row:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .banner-form-wrap .field-wrap {
+        flex-wrap: wrap;
+    }
+
+    .rates-cnt .card {
+        max-width: 330px;
+    }
+
+    .rates-cnt {
+        flex-wrap: wrap;
+        gap: 60px 50px;
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    .best-offer-area .card-wrap {
+        justify-content: center;
+    }
+
+    footer .card-wrap {
+        justify-content: left;
+    }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1024px) {
+    .main-container {
+        padding: 0 16px;
+        max-width: 100%;
+    }
+
+    .banner-cnt .left-wrap h2 {
+        font-size: 35px;
+        line-height: 41px;
+    }
+
+    .stand-cnt h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .stand-cnt .card-wrap .card:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .stand-cnt .card-wrap .card:nth-child(4) {
+        margin-top: 0;
+    }
+
+    .service-cnt {
+        flex-direction: column;
+    }
+
+    .service-cnt .left-wrap {
+        width: 100%;
+    }
+
+    .service-cnt .left-wrap figure {
+        margin-left: calc(-96vw + 100%);
+        height: auto;
+    }
+
+    .service-cnt .left-wrap figure img {
+        height: auto;
+        width: 100%;
+    }
+
+    .service-cnt .right-wrap {
+        width: 100%;
+    }
+
+    .service-cnt .right-wrap h3 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .head-text h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .why-choose-us {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why-choose-us .right-wrap h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .rates-cnt {
+        flex-wrap: wrap;
+        gap: 75px;
+        padding: 40px 0;
+    }
+
+    .testimonial-area .tesimonial-cnt {
+        flex-direction: column;
+    }
+
+    .testimonial-area .tesimonial-cnt .left-wrap {
+        width: 100%;
+    }
+
+    .testimonial-area .tesimonial-cnt .right-wrap figure {
+        width: 100%;
+        margin-left: calc(-27vw + 100%);
+    }
+
+    .book-car h2 {
+        font-size: 33px;
+        line-height: 40px;
+    }
+
+    .why-choose-us .left-wrap {
+        justify-content: center;
+    }
+
+    .banner-cnt {
+        padding: 150px 0 0;
+    }
+
+    .stand-cnt {
+        padding: 40px 0;
+        gap: 40px;
+    }
+
+    .class-rates-wrap {
+        padding: 40px 0;
+    }
+
+    .slider-wrap .swiper {
+        padding: 40px 0 40px 0;
+    }
+
+    .best-offer-area {
+        padding: 40px 0;
+    }
+
+    .more-price {
+        margin-top: 40px;
+    }
+
+    .best-offer-area .card-wrap {
+        margin-top: 40px;
+    }
+
+    .testimonial-area {
+        padding: 40px 0;
+    }
+
+    .book-car .call-wrap p {
+        font-size: 25px;
+    }
+
+    .book-car .call-wrap {
+        gap: 20px;
+    }
+
+    footer .card-wrap .card-cnt h2 {
+        margin-bottom: 20px;
+    }
+
+    footer .card-wrap {
+        gap: 20px;
+    }
+
+    .why-choose-us .left-wrap .row:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .banner-form-wrap .field-wrap {
+        flex-wrap: wrap;
+    }
+
+    .rates-cnt {
+        flex-wrap: wrap;
+        gap: 60px 50px;
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    .best-offer-area .card-wrap {
+        justify-content: center;
+    }
+
+    footer .card-wrap {
+        justify-content: left;
+    }
+
+    footer .card-wrap .card-cnt {
+        max-width: 270px;
+    }
+
+    .service-cnt .right-wrap .serv-cnt .services {
+        width: 100%;
+        max-width: 370px;
+    }
+
+    .service-cnt .right-wrap .serv-cnt {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* header responsive css */
+
+@media screen and (max-width:767px) {
+    .nav-wrap ul {
+        display: none;
+    }
+
+    .nav-wrap .logo h2 {
+        font-size: 25px;
+        line-height: 30.02px;
+    }
+
+    .ham-icon {
+        display: block;
+        position: absolute;
+        left: 16px;
+    }
+
+    .sidebar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        background: #ffffff;
+        height: 100vh;
+        padding: 30px;
+        width: 250px;
+    }
+
+    .main-btn {
+        padding: 6px 15px;
+    }
+
+    .nav-wrap .nav-btn a {
+        font-size: 18px;
+    }
+
+    .logo img {
+        width: 100%;
+        max-width: 147px;
+        margin-left: 25px;
+    }
+
+    .nav-wrap .nav-btn {
+        gap: 10px;
+    }
+
+    .banner-cnt .right-wrap figure {
+        width: 100%;
+    }
+
+    .banner-cnt .right-wrap figure img {
+        width: 100%;
+    }
+
+    .why-choose-us .right-wrap a {
+        max-width: 200px;
+    }
+
+    .banner-cnt .left-wrap a {
+        max-width: 200px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 819px) {
+    .nav-wrap ul {
+        display: none;
+    }
+
+    .nav-wrap .logo h2 {
+        font-size: 25px;
+        line-height: 30.02px;
+    }
+
+    .ham-icon {
+        display: block;
+        position: absolute;
+        left: 16px;
+    }
+
+    .sidebar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        background: #ffffff;
+        height: 100vh;
+        padding: 30px;
+        width: 250px;
+    }
+
+    .main-btn {
+        padding: 6px 15px;
+    }
+
+    .nav-wrap .nav-btn a {
+        font-size: 18px;
+    }
+
+    .logo img {
+        width: 100%;
+        max-width: 147px;
+        margin-left: 35px;
+    }
+
+    .nav-wrap .nav-btn {
+        gap: 10px;
+    }
+
+    .banner-cnt .right-wrap figure {
+        width: 100%;
+    }
+
+    .banner-cnt .right-wrap figure img {
+        width: 100%;
+    }
+
+    .why-choose-us .right-wrap a {
+        max-width: 200px;
+    }
+
+    .banner-cnt .left-wrap a {
+        max-width: 200px;
+    }
+}
+
+/*  */
+
+
+
+/* CAR BOOKING CSS */
+
+@media screen and (max-width:767px) {
+    .car-booking-area .book-area {
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    .car-booking-area .book-area .left-wrap {
+        padding: 40px;
+        width: calc(100% + 16px);
+        margin-left: calc(-96vw + 100%);
+    }
+
+    .car-booking-area .book-area .left-wrap h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .book-form-wrap .field-wrap {
+        flex-wrap: wrap;
+    }
+
+    .car-booking-area .book-area .right-wrap {
+        padding: 20px;
+    }
+
+    .right-wrapper .car-area figure {
+        width: 100%;
+        margin-left: calc(-90vw + 100%);
+    }
+
+    .right-wrapper .estimation {
+        margin: 30px 0;
+    }
+
+    .car-booking-area .book-area .right-wrap .rate-wrap .left-cnt {
+        gap: 10px;
+    }
+
+    .date {
+        background-size: 20px;
+    }
+
+    .pickup {
+        background-size: 20px;
+    }
+
+    .plocation {
+        background-size: 20px;
+    }
+
+    .user {
+        background-size: 20px;
+    }
+
+    .book-form-wrap .black-btn {
+        max-width: 100% !important;
+    }
+
+    .mw-68 {
+        max-width: 68%;
+    }
+
+    .book-form-wrap .textbox::placeholder {
+        font-size: 16px;
+    }
+
+    .book-form-wrap .textbox {
+        font-size: 16px;
+    }
+
+    .car-booking-area .book-area .right-wrap .rate-wrap .left-cnt .rate-cnt p {
+        width: 100%;
+        max-width: 150px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 819px) {
+    .right-wrapper .car-area figure {
+        margin-left: calc(-46vw + 100%);
+        margin-top: 50px;
+    }
+
+    .car-booking-area .book-area .right-wrap {
+        padding: 20px;
+    }
+
+    .book-car h2 {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,32 @@
+<section class="wrapper">
+    <div class="container">
+        <div aria-label="breadcrumb" class="mb-2 mb-sm-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">My Account</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Booking</li>
+            </ol>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="list-group">
+                    <a href="/user/profile" class="list-group-item list-group-item-action" aria-current="true" [ngClass]="{'active': currentUrl.includes('profile')}">
+                      My Profile
+                    </a>
+                    <a href="/user/booking" class="list-group-item list-group-item-action" [ngClass]="{'active': currentUrl.includes('booking')}">Booking</a>
+                    <a href="/user/change-password" class="list-group-item list-group-item-action" [ngClass]="{'active': currentUrl.includes('change-password')}">Change Password</a>
+                    <a href="/user/enquiry" class="list-group-item list-group-item-action" [ngClass]="{'active': currentUrl.includes('enquiry')}">Enquiry</a>
+                    <a class="list-group-item list-group-item-action" (click)="logOut()">Log Out</a>
+                </div>
+            </div>
+            <div class="col-sm-5" *ngIf='!istable'>
+                <router-outlet></router-outlet>
+            </div>   
+            <div class="col-sm-9" *ngIf='istable'>
+                <router-outlet></router-outlet>
+            </div>            
+        </div>
+    </div>
+</section>

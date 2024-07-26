@@ -1,0 +1,134 @@
+<h4 class="heading">Booking Details
+    <span *ngIf="details?.status=='active'">OnGoing</span>
+    <span *ngIf="details?.status=='request'">Pending for Cancel</span>
+    <span *ngIf="details?.status=='completed' && details?.isAccept==true">Completed</span>
+    <span *ngIf="details?.status=='inactive' && details?.status=='cancel'">Cancelled</span>
+</h4>
+<div class="detail-wrap">
+    <div class="field-wrap">
+        <h2 class="book-head">Booking ID:</h2>
+        <p>{{details?.book_id}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Booking Date:</h2>
+        <p>{{ moment(details?.createdAt).format('dddd - Do MMM, yyyy') }}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Journey Date:</h2>
+        <p>{{ moment(details?.travelDate).format('dddd - Do MMM, yyyy') }}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Journey Time:</h2>
+        <p>{{details?.pickupTime}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">PickUp Location:</h2>
+        <p>{{details?.pickupLocation}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Drop Location:</h2>
+        <p>{{details?.primaryDrop}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Luggage(in K.G.):</h2>
+        <p>{{details?.luggage}}</p>
+    </div>
+
+    <ng-container *ngIf="details?.extraPassengers!==0">
+        <div class="field-wrap">
+            <h2 class="book-head">Extra Passengers:</h2>
+            <p>{{details?.extraPassengers}}</p>
+        </div>
+    
+        <div class="field-wrap">
+            <h2 class="book-head">Extra Passengers Fare:</h2>
+            <p>${{details?.extraPassengerFare}}</p>
+        </div>
+        <div class="field-wrap">
+            <h2 class="book-head">Drop Location:</h2>
+            <p><span *ngFor="let dropLocation of details?.dropLocation">{{dropLocation}}</span></p>
+        </div>
+    </ng-container>
+</div>
+
+<h4 class="heading">Car Details</h4>
+<div class="detail-wrap">
+    <div class="field-wrap">
+        <h2 class="book-head">Name</h2>
+        <p>{{details?.car?.name}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Description</h2>
+        <p>{{details?.car?.description}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Type</h2>
+        <p>{{details?.car?.type}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Seats</h2>
+        <p>{{details?.car?.seats}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Car Fare:</h2>
+        <p>${{details?.car?.price}}</p>
+    </div>
+    <div class="field-wrap">
+        <img [src]="details?.car?.image" height="200px" width="200px">
+    </div>
+</div>
+
+<h4 class="heading" *ngIf="details?.driver">Driver Details</h4>
+<div class="detail-wrap" *ngIf="details?.driver">
+    <div class="field-wrap">
+        <h2 class="book-head">Name</h2>
+        <p>{{details?.driver?.name}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Contact Number</h2>
+        <p>{{details?.driver?.phone}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Driving License </h2>
+        <p>{{details?.driver?.drivingLicense}}</p>
+    </div>
+    <div class="field-wrap">
+        <img [src]="details?.driver?.profile_image" height="200px" width="200px">
+    </div>
+</div>
+
+<div class="detail-wrap">
+    <div class="field-wrap">
+        <h2 class="book-head">Total Distance:</h2>
+        <p>{{details?.totalDistance}}</p>
+    </div>
+    <div class="field-wrap">
+        <h2 class="book-head">Distance Fare:</h2>
+        <p>${{details?.distance_price}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Total Fare:</h2>
+        <p>${{details?.fare}}</p>
+    </div>
+
+    <div class="field-wrap">
+        <h2 class="book-head">Payment Status:</h2>
+        <p>{{details?.paymentStatus}}</p>
+    </div>
+</div>
+
+<app-reviews *ngIf="details?.status=='completed' && details?.isAccept==true" [bookingId]="details?._id" [carId]="details?.car?._id"
+></app-reviews>

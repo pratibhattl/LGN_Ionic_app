@@ -16,7 +16,6 @@ export class AllapiService {
     public header2:any;
     public header1:any;
     private pusher: Pusher;
-    private channel: any;
 
     constructor(private _http: HttpClient, private navCtrl: NavController) {
         if (localStorage.getItem("token")!= null) {
@@ -31,12 +30,33 @@ export class AllapiService {
         this.pusher = new Pusher('0b6fa1d63930682ca120', {
             cluster: 'ap2'
           });
-          this.channel = this.pusher.subscribe('tournament-question');
+          this.pusher = new Pusher ('0b6fa1d63930682ca120', {
+            cluster: 'ap2'
+          });
 
+          this.pusher.connection.bind('state_change', (states: any) => {
+            console.log('Pusher state change:', states);
+          });
+          this.pusher.connection.bind('connected', () => {
+            console.log('Pusher connected');
+          });
+          this.pusher.connection.bind('disconnected', () => {
+            console.log('Pusher disconnected');
+          });
+
+          this.pusher.connection.bind('error', (err: any) => {
+            console.error('Pusher error:', err);
+          });
         
     }
-  
-    // socket = io('http://localhost:8080');
+    
+    subscribeToTournament(tourId: string, callback: (data: any) => void): void {
+        const channelName = `tournament-question-${tourId}`;
+        const eventName = `tournament-question-notification-${tourId}`;
+    
+        const channel = this.pusher.subscribe(channelName);
+        channel.bind(eventName, callback);
+      }
 
     storeLocally(res:any){
         localStorage.setItem('token', res.token);
@@ -52,9 +72,6 @@ export class AllapiService {
         }
     }
 
-    public bind(event: string, callback: Function) {
-        this.channel.bind(event, callback);
-      }
 
     // public sendMessage(message: any) {
     //     console.log('sendMessage: ', message)

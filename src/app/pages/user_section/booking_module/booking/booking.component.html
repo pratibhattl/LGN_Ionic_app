@@ -1,0 +1,105 @@
+
+
+<ng-container *ngIf="bookingList.length>0;else noBooking">
+    <h2 class="heading">Ongoing Booking</h2>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Booking ID</th>
+                <!-- <th>Booking No.</th> -->
+                <th>Cab</th>
+                <th>Booking Date</th>
+                <th>Travel Date</th>
+                <th>Pickup Location</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let booking of bookingList;let i = index">
+                <td>{{ booking?.book_id }}</td>
+                <td>{{ booking?.car?.name }}</td>
+                <td>{{ moment(booking?.createdAt).format('dddd - Do MMM, yyyy') }}</td>
+                <td>{{ moment(booking?.travelDate).format('dddd - Do MMM, yyyy') }}</td>
+                <td>{{ booking?.pickupLocation }}</td>
+                <td>
+                    <a class="btn btn-sm btn-success" routerLink="/user/booking/{{ booking._id }}">Details</a>
+                    <a class="btn btn-sm btn-warn" (click)=cancelBook(booking._id) *ngIf="booking?.status!='request'">Cancel</a>
+                    <a class="btn btn-sm btn-warn" *ngIf="booking?.status=='request'">Pending your cancel request</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
+<ng-template #noBooking>
+    <h2 class="heading">There is no ongoing booking.</h2>
+</ng-template>
+
+
+<ng-container *ngIf="completeBookingList.length>0">
+    <h2 class="heading">Completed Booking</h2>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Booking ID</th>
+                <!-- <th>Booking No.</th> -->
+                <th>Cab</th>
+                <th>Booking Date</th>
+                <th>Travel Date</th>
+                <th>Pickup Location</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let booking of completeBookingList;let i = index">
+                <td>{{ booking?.book_id }}</td>
+                <td>{{ booking?.car?.name }}</td>
+                <td>{{ moment(booking?.createdAt).format('dddd - Do MMM, yyyy') }}</td>
+                <td>{{ moment(booking?.travelDate).format('dddd - Do MMM, yyyy') }}</td>
+                <td>{{ booking?.pickupLocation }}</td>
+                <td>
+                    <a class="btn btn-sm btn-success" routerLink="/user/booking/{{ booking._id }}">Details</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
+
+<ng-container *ngIf="cancelList.length>0">
+    <h2 class="heading">Cancelled Booking</h2>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Booking ID</th>
+                <!-- <th>Booking No.</th> -->
+                <th>Cab</th>
+                <th>Booking Date</th>
+                <th>Travel Date</th>
+                <th>Pickup Location</th>
+                <!-- <th>Action</th> -->
+            </tr>
+            <tr *ngFor="let booking of cancelList;let i = index">
+                <td>{{ booking?.book_id }}</td>
+                <td>{{ booking?.car?.name }}</td>
+                <td>{{ moment(booking?.createdAt).format('dddd - Do MMM, yyyy') }}</td>
+                <td>{{ moment(booking?.travelDate).format('dddd - Do MMM, yyyy') }}</td>
+                <td>{{ booking?.pickupLocation }}</td>
+                <!-- <td>
+                    <a class="btn btn-sm btn-success" routerLink="/user/booking/{{booking._id}}">Details</a>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
+    <div class="dialog is-shown" *ngIf="cancelDialog">
+        <div class="dialog__overlay"></div>
+        <div class="dialog__container">
+            <div class="dialog__background">
+                <header class="dialog__title">
+                    Cancel
+                </header>
+                <section class="dialog__content">
+                   Are you sure? Do you want to cancel this booking?
+                </section>
+                <footer class="dialog__footer">
+                    <a class="button button--secondary" (click)=confirm()>Confirm</a>
+                    <a class="button button--primary" (click)=cancel()>Cancel</a>
+                </footer>
+            </div>
+        </div>
+    </div>

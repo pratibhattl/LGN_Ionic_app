@@ -1,0 +1,21 @@
+<ng-container  *ngIf="notificationList.length>0">
+    <div class="card" style="margin-bottom: 5px;" *ngFor="let notifications of notificationList" [ngClass]="{'isActive': notifications?.isRead ==false }">
+        <div class="card-body" (click)="readNotification(notifications?._id)">
+          <h5 class="card-title">{{notifications?.title}}</h5>
+          <p class="card-text">
+            <span *ngIf="notifications?.type==1">Admin accept your booking request</span>
+            <span *ngIf="notifications?.type==2">Admin cancel booking request</span>
+          </p>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="notificationList.length==0">
+    <div class="card">
+        <div class="card-body">
+          <p class="card-text">There is no notification</p>
+        </div>
+    </div>
+</ng-container>
+
+
+

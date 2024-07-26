@@ -1,0 +1,23 @@
+<section>
+    <div class="main-container">
+        <div class="card-wrap">
+            <div *ngFor="let car of carSarch">
+                <div class="card-cnt">
+                    <div class="img-wrap">
+                        <img [src]="car?.image">
+                    </div>
+                    <div class="card-detail">
+                        <div class="detail-wrap">
+                            <h3>Type: <span>{{car?.type}}</span> </h3>
+                            <h3>Name:<span>{{car?.name}}</span></h3>
+                            <h3>Description:<span>{{car?.description}}</span></h3>
+                            <h3>Weight:<span>{{car?.max_weight}}</span></h3>
+                            <h3>seats:<span>{{car?.seats}}</span></h3>
+                            <h3>Price:<span>${{car?.price}}</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

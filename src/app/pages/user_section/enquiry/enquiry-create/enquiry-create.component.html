@@ -1,0 +1,14 @@
+<h4 class="heading">Enquiry</h4>
+<form [formGroup]="enquiryForm">
+    <div class="field-wrap">
+        <label class="label-txt">Message</label>
+        <textarea type="text" class="message textbox" formControlName="message" [ngClass]="{ 'is-invalid':submitted && f['message'].errors }"></textarea>                        
+        <div *ngIf="submitted && f['message'].errors" class="field-wrap">
+            <span *ngIf="f['message'].errors['required']">Please enter your enquiry message.</span>
+            <span *ngIf="f['message'].errors['cannotContainSpace']">There should be no blank space in your message.</span>
+        </div>
+    </div>
+    <div class="field-wrap">
+        <input type="submit" class="main-btn" value="Submit" (click)="messageSubmit()">
+    </div>
+</form>

@@ -1,0 +1,17 @@
+<div>
+    <h3 class="heading">Review </h3>
+    <ng-container *ngIf="!showReview">
+        <div class="star-wrap">
+            <ngx-star-rating [(ngModel)]="ratings" [id]="'ratings'" ></ngx-star-rating >
+        </div>
+        <textarea name="" id="" [(ngModel)]="content"  placeholder="Your Comment..." rows="5" cols="30" class="textarea"></textarea>
+        <button (click)="submit()" class="main-btn">Submit</button>
+    </ng-container>
+   
+    <div *ngIf="showReview">
+        <div class="star-wrap" *ngIf="reviews?.ratings">
+            <ngx-star-rating [ngModel]="reviews?.ratings" [id]="'ratings'" disable></ngx-star-rating >
+        </div>
+        <p>{{reviews?.content}}</p>
+    </div>
+</div>
